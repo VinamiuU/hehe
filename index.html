@@ -519,7 +519,7 @@
       border-bottom: 1px solid rgba(148, 163, 184, 0.4);
       padding: 7px 4px;
       font-family: var(--font-serif);
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.6px;
       color: #e2e8f0;
@@ -527,7 +527,7 @@
 
     .date-day {
       font-family: var(--font-serif);
-      font-size: 56px;
+      font-size: 40px;
       font-weight: 700;
       line-height: 0.95;
       color: #ffffff;
@@ -1259,6 +1259,78 @@
       .hero-script-title { font-size: 40px; }
       .graduate-name { font-size: 44px; }
     }
+    .photo-frame:not(.is-empty) {
+      cursor: zoom-in;
+    }
+
+    .photo-frame:not(.is-empty)::after {
+      content: "🔍";
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(5, 11, 24, 0.72);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .lightbox-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 95;
+      background: rgba(2, 6, 23, 0.92);
+      backdrop-filter: blur(8px);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox-backdrop.open {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 29, 61, 0.9);
+      color: #ffffff;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .lightbox-img {
+      max-width: 94vw;
+      max-height: 78vh;
+      border-radius: 14px;
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      object-fit: contain;
+    }
+
+    .lightbox-caption {
+      margin-top: 14px;
+      color: #e2e8f0;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+
   </style>
 </head>
 <body class="lock-scroll">
@@ -1276,6 +1348,7 @@
         <span>✉</span>
         <span>Mở thiệp </span>
       </button>
+      <button type="button" class="btn-open-silent" id="btnOpenSilent"></button>
     </div>
   </div>
 
@@ -1372,16 +1445,6 @@
             <span>LAPTOP</span>
           </div>
 
-          <div class="elec-item" title="PC Workstation">
-            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
-              <rect x="4" y="6" width="20" height="15" rx="2" fill="rgba(56,189,248,0.1)" />
-              <path d="M11 25h6M14 21v4" stroke-linecap="round" />
-              <rect x="26" y="6" width="7" height="19" rx="1.5" />
-              <circle cx="29.5" cy="21" r="1.2" fill="#38bdf8" />
-            </svg>
-            <span>PC_RIG</span>
-          </div>
-
           <div class="elec-item emerald" title="Microcontroller">
             <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
               <rect x="10" y="10" width="16" height="16" rx="2" fill="rgba(16,185,129,0.12)" />
@@ -1406,10 +1469,10 @@
           <div class="date-month">NOVEMBER</div>
           <div class="date-row">
             <div class="date-side">THỨ TƯ</div>
-            <div class="date-day">25</div>
-            <div class="date-side">11:00 - 11:30</div>
+            <div class="date-day">25/11</div>
+            <div class="date-side">2026</div>
           </div>
-          <div class="date-year">2026</div>
+          <div class="date-year">11:00 - 11:30</div>
         </div>
 
         <!-- Location -->
@@ -1679,6 +1742,12 @@
         <button type="button" class="btn-open" id="btnPreviewInvite">Mở thử ngay</button>
       </div>
     </div>
+  </div>
+  <!-- ==================== ALBUM LIGHTBOX MODAL ==================== -->
+  <div class="lightbox-backdrop" id="photoLightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh phóng to">
+    <button type="button" class="lightbox-close" id="closeLightboxBtn" aria-label="Đóng">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Xem ảnh phóng to" />
+    <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
 
   <script>
@@ -2188,6 +2257,40 @@
     if (params.get("admin") === "1") {
       openAdminModal();
     }
+    /* ==================== 6. ALBUM PHOTO LIGHTBOX ==================== */
+    const photoLightbox = document.getElementById("photoLightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+
+    function openPhotoLightbox(frameId, imgId, captionText) {
+      const frame = document.getElementById(frameId);
+      const img = document.getElementById(imgId);
+      if (!frame || frame.classList.contains("is-empty") || !img.src) return;
+
+      lightboxImg.src = img.src;
+      lightboxCaption.textContent = captionText;
+      photoLightbox.classList.add("open");
+    }
+
+    function closePhotoLightbox() {
+      photoLightbox.classList.remove("open");
+    }
+
+    document.getElementById("myPhotoFrame").addEventListener("click", () => {
+      openPhotoLightbox("myPhotoFrame", "myPhotoImg", CONFIG.hostName);
+    });
+
+    document.getElementById("guestPhotoFrame").addEventListener("click", () => {
+      openPhotoLightbox("guestPhotoFrame", "guestPhotoImg", document.getElementById("guestPhotoCaption").textContent);
+    });
+
+    document.getElementById("closeLightboxBtn").addEventListener("click", closePhotoLightbox);
+    photoLightbox.addEventListener("click", (e) => {
+      if (e.target === photoLightbox) closePhotoLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closePhotoLightbox();
+    });
   </script>
 </body>
 </html>
