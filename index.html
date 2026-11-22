@@ -2000,7 +2000,7 @@
         const cloudWishes = Array.isArray(json.data) ? json.data : [];
         wishesData = [...cloudWishes, ...DEFAULT_WISHES];
         renderWishes(wishesData);
-        wishSyncNote.textContent = wishesData.length > 0 ? `✓ Đã đồng bộ ${wishesData.length} lời chúc` : "";
+        wishSyncNote.textContent = wishesData.length > 0 ? `${wishesData.length} lời chúc` : "";
       } catch (_) {
         wishesData = loadLocalWishes();
         renderWishes(wishesData);
