@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiệp Mời Tốt Nghiệp • Nguyễn Vũ hehe (UIT 2026)</title>
+  <meta name="description" content="Thân mời bạn tới dự Lễ Tốt Nghiệp của Nguyễn Vũ Nam - Trường Đại học Công nghệ Thông tin (UIT)." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-deep: #050b18;
+      --bg-card: #0a142b;
+      --bg-panel: rgba(13, 25, 52, 0.82);
+      --uit-navy: #1d3587;
+      --uit-blue: #2563eb;
+      --uit-cyan: #38bdf8;
+      --uit-emerald: #10b981;
+      --gold: #facc15;
+      --text-main: #f1f5f9;
+      --text-soft: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border-tech: rgba(56, 189, 248, 0.22);
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-script: 'Great Vibes', cursive;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      background-image:
+        radial-gradient(circle at 15% 12%, rgba(37, 99, 235, 0.22), transparent 36%),
+        radial-gradient(circle at 85% 32%, rgba(16, 185, 129, 0.14), transparent 34%),
+        radial-gradient(circle at 50% 88%, rgba(56, 189, 248, 0.14), transparent 40%),
+        linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px, 28px 28px;
+      overflow-x: hidden;
+    }
+
+    .page-shell {
+      width: 100%;
+      max-width: 480px;
+      background: linear-gradient(180deg, #071024 0%, #09152e 45%, #071124 100%);
+      position: relative;
+      box-shadow: 0 0 60px rgba(2, 6, 23, 0.85), 0 0 0 1px rgba(56, 189, 248, 0.14);
+      overflow: hidden;
+    }
+
+    /* PCB subtle background traces */
+    .pcb-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.16;
+      z-index: 0;
+    }
+
+    section {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ==================== HERO & UIT STOLES ==================== */
+    .hero {
+      position: relative;
+      padding: 20px 18px 34px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-tech);
+      background:
+        radial-gradient(ellipse at 50% 18%, rgba(37, 99, 235, 0.28), transparent 62%),
+        linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, transparent 22%);
+    }
+
+    /* Graduation Stoles mimicking real UIT white-blue sash + emerald robe edge */
+    .stole {
+      position: absolute;
+      top: 0;
+      width: 58px;
+      height: 318px;
+      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 65%, #e2e8f0 100%);
+      color: #162e84;
+      clip-path: polygon(0 0, 100% 0, 100% 89%, 50% 100%, 0 89%);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 4px 30px;
+      z-index: 4;
+      user-select: none;
+    }
+
+    .stole::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-left: 3px solid #1d4ed8;
+      border-right: 3px solid #1d4ed8;
+      pointer-events: none;
+    }
+
+    .stole-left {
+      left: 8px;
+      box-shadow: 3px 0 0 #10b981, 0 12px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .stole-right {
+      right: 8px;
+      box-shadow: -3px 0 0 #10b981, 0 12px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .stole-logo-wrap {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stole-logo-wrap img,
+    .stole-logo-wrap svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .stole-uit-vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 22px;
+      line-height: 1;
+      color: #152b7e;
+      letter-spacing: 1px;
+    }
+
+    .stole-uni-small {
+      font-size: 6.2px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1d4ed8;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 0 2px;
+    }
+
+    .stole-right-top {
+      text-align: center;
+      line-height: 1;
+    }
+
+    .stole-right-top .uit-big {
+      display: block;
+      font-size: 20px;
+      font-weight: 900;
+      color: #1d4ed8;
+      letter-spacing: -0.5px;
+    }
+
+    .stole-right-top .vnu-sub {
+      display: block;
+      font-size: 7.5px;
+      font-weight: 800;
+      color: #152b7e;
+      margin-top: 2px;
+      letter-spacing: 0.4px;
+    }
+
+    .stole-grad-script {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: var(--font-script);
+      font-size: 26px;
+      color: #1d4ed8;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      border-right: 2px solid #2563eb;
+      padding-right: 3px;
+    }
+
+    .stole-cap {
+      width: 34px;
+      height: 26px;
+    }
+
+    /* Center Hero Upper Column (clears stoles on mobile) */
+    .hero-top-center {
+      padding: 8px 66px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .uni-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .uni-logo-circle {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.96);
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3), 0 8px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .uni-logo-circle img,
+    .uni-logo-circle svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .uni-title-small {
+      font-size: 9.5px;
+      letter-spacing: 1.2px;
+      color: var(--uit-cyan);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .uni-title-main {
+      font-size: 11px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.4px;
+      line-height: 1.3;
+    }
+
+    .hero-script-title {
+      font-family: var(--font-script);
+      font-size: 46px;
+      line-height: 1.05;
+      color: #ffffff;
+      text-shadow: 0 4px 20px rgba(56, 189, 248, 0.42);
+      margin-top: 2px;
+    }
+
+    .hero-serif-sub {
+      font-family: var(--font-serif);
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #bae6fd;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .tech-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.32);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--uit-cyan);
+      margin-bottom: 16px;
+    }
+
+    .led-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--uit-emerald);
+      box-shadow: 0 0 8px var(--uit-emerald);
+      animation: blinkLed 1.4s infinite;
+    }
+
+    @keyframes blinkLed {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.82); }
+    }
+
+    /* Invitation Receiver */
+    .invite-to-block {
+      margin-top: 4px;
+      padding: 0 58px;
+    }
+
+    .invite-label {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      color: var(--text-soft);
+      font-style: italic;
+    }
+
+    .guest-name-display {
+      display: inline-block;
+      min-width: 170px;
+      margin: 6px 0;
+      padding: 2px 12px 4px;
+      font-family: var(--font-serif);
+      font-size: 23px;
+      font-weight: 700;
+      color: #ffffff;
+      border-bottom: 1.5px dashed var(--uit-cyan);
+      text-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Full-width lower hero below stoles */
+    .hero-lower {
+      margin-top: 22px;
+      padding: 0 8px;
+    }
+
+    .graduate-name {
+      font-family: var(--font-script);
+      font-size: 50px;
+      line-height: 1.15;
+      background: linear-gradient(90deg, #ffffff 0%, #bae6fd 50%, #6ee7b7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 16px rgba(37, 99, 235, 0.35));
+      margin: 6px 0 10px;
+    }
+
+    .hero-quote {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      line-height: 1.45;
+      color: var(--text-soft);
+      max-width: 340px;
+      margin: 0 auto 20px;
+    }
+
+    /* Electronics Icon Strip (ESP32, Laptop, PC, MCU, PWM) */
+    .electronics-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 0 auto 24px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(10, 22, 48, 0.72);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      max-width: 360px;
+    }
+
+    .elec-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--uit-cyan);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.4px;
+    }
+
+    .elec-item svg {
+      width: 28px;
+      height: 28px;
+      filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.35));
+    }
+
+    .elec-item.emerald {
+      color: #34d399;
+    }
+
+    /* Date Card */
+    .date-box {
+      margin: 0 auto 22px;
+      padding: 18px 14px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(15, 29, 61, 0.9), rgba(9, 19, 41, 0.95));
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .date-month {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--uit-cyan);
+      margin-bottom: 6px;
+    }
+
+    .date-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .date-side {
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 7px 4px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      color: #e2e8f0;
+    }
+
+    .date-day {
+      font-family: var(--font-serif);
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 0.95;
+      color: #ffffff;
+      text-shadow: 0 0 22px rgba(56, 189, 248, 0.45);
+    }
+
+    .date-year {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #93c5fd;
+      margin-top: 6px;
+    }
+
+    /* Location */
+    .location-block {
+      margin-top: 8px;
+    }
+
+    .location-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      color: var(--uit-emerald);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .location-uni {
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.3px;
+    }
+
+    .location-addr {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--text-soft);
+      margin: 4px auto 16px;
+      max-width: 340px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 26px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      border: 1px solid rgba(147, 197, 253, 0.45);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(56, 189, 248, 0.42);
+    }
+
+    /* ==================== SECTION HEADERS ==================== */
+    .section-block {
+      padding: 34px 18px;
+      border-bottom: 1px solid var(--border-tech);
+    }
+
+    .sec-kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--uit-cyan);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .sec-heading {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .meeting-highlight {
+      margin: 10px auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      color: #6ee7b7;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* ==================== INTERACTIVE UIT MAP ==================== */
+    .map-card {
+      background: #081226;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 20px;
+      padding: 12px;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    .map-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .map-status {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--uit-cyan);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-tour {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(250, 204, 21, 0.55);
+      background: rgba(250, 204, 21, 0.14);
+      color: #fde047;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-tour:hover {
+      background: rgba(250, 204, 21, 0.24);
+      transform: scale(1.03);
+    }
+
+    .map-viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #0a1730;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      cursor: pointer;
+    }
+
+    .map-viewport svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .star-node {
+      cursor: pointer;
+      transition: transform 0.25s ease;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .star-node:hover {
+      transform: scale(1.18);
+    }
+
+    .star-pulse {
+      animation: starPulse 1.6s infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    @keyframes starPulse {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.38); opacity: 0.25; }
+    }
+
+    .route-dash {
+      stroke-dasharray: 8 6;
+      animation: dashFlow 1.8s linear infinite;
+    }
+
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -28; }
+    }
+
+    .map-steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .step-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 10px;
+      border-radius: 12px;
+      background: rgba(15, 28, 58, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      color: var(--text-soft);
+      font-size: 12px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .step-btn .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.16);
+      color: var(--uit-cyan);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-btn.active {
+      background: rgba(37, 99, 235, 0.24);
+      border-color: var(--uit-cyan);
+      color: #ffffff;
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.25);
+    }
+
+    .step-btn.active .step-num {
+      background: var(--gold);
+      color: #0f172a;
+    }
+
+    /* ==================== ALBUM OF YOUTH (2 PHOTOS) ==================== */
+    .album-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .album-top {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      letter-spacing: 3px;
+      color: #cbd5e1;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .album-top .of-script {
+      font-family: var(--font-script);
+      font-size: 38px;
+      letter-spacing: 0;
+      color: var(--uit-cyan);
+    }
+
+    .album-youth {
+      font-family: var(--font-serif);
+      font-size: 56px;
+      font-weight: 700;
+      letter-spacing: 6px;
+      line-height: 0.95;
+      color: #ffffff;
+      text-shadow: 0 4px 24px rgba(37, 99, 235, 0.45);
+    }
+
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .photo-card {
+      background: rgba(12, 24, 50, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.26);
+      border-radius: 16px;
+      padding: 8px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+      transition: transform 0.25s ease;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .photo-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 11px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #0f2044, #091329);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-fallback {
+      position: absolute;
+      inset: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px;
+      text-align: center;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+
+    .photo-frame.is-empty .photo-fallback {
+      display: flex;
+    }
+
+    .photo-frame.is-empty img {
+      display: none;
+    }
+
+    .photo-meta {
+      padding: 10px 4px 4px;
+      text-align: center;
+    }
+
+    .photo-tag {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      color: var(--uit-emerald);
+      letter-spacing: 1px;
+    }
+
+    .photo-caption {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ==================== GUESTBOOK ==================== */
+    .guestbook-script {
+      font-family: var(--font-script);
+      font-size: 46px;
+      text-align: center;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+
+    .guestbook-sub {
+      text-align: center;
+      font-family: var(--font-serif);
+      font-size: 17px;
+      color: var(--text-soft);
+      max-width: 340px;
+      margin: 6px auto 18px;
+    }
+
+    .wish-form {
+      background: rgba(15, 29, 61, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .wish-input,
+    .wish-textarea {
+      width: 100%;
+      background: rgba(6, 13, 29, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      border-radius: 10px;
+      padding: 11px 13px;
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .wish-input:focus,
+    .wish-textarea:focus {
+      border-color: var(--uit-cyan);
+    }
+
+    .wish-textarea {
+      min-height: 78px;
+      resize: vertical;
+    }
+
+    .wish-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 290px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .wish-list::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .wish-list::-webkit-scrollbar-thumb {
+      background: rgba(56, 189, 248, 0.35);
+      border-radius: 99px;
+    }
+
+    .wish-item {
+      background: rgba(11, 22, 46, 0.86);
+      border: 1px solid rgba(56, 189, 248, 0.16);
+      border-left: 3px solid var(--uit-cyan);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
+    .wish-author {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #93c5fd;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wish-msg {
+      font-size: 13.5px;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* ==================== FOOTER ==================== */
+    .thank-section {
+      padding: 36px 22px 92px;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, rgba(37, 99, 235, 0.18), transparent 70%);
+    }
+
+    .thank-script {
+      font-family: var(--font-script);
+      font-size: 56px;
+      color: #ffffff;
+      line-height: 1.05;
+      margin-bottom: 10px;
+      text-shadow: 0 4px 20px rgba(56, 189, 248, 0.35);
+    }
+
+    .thank-text {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      color: var(--text-soft);
+      line-height: 1.55;
+      max-width: 360px;
+      margin: 0 auto 22px;
+    }
+
+    .footer-sign {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    .admin-trigger {
+      margin-top: 14px;
+      background: transparent;
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      opacity: 0.65;
+      transition: opacity 0.2s ease, border-color 0.2s ease;
+    }
+
+    .admin-trigger:hover {
+      opacity: 1;
+      border-color: var(--uit-cyan);
+      color: var(--uit-cyan);
+    }
+
+    /* ==================== FLOATING AUDIO PLAYER ==================== */
+    .audio-dock {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 28px);
+      max-width: 444px;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(8, 17, 36, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(56, 189, 248, 0.36);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+    }
+
+    .audio-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .btn-play {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, #2563eb, #10b981);
+      color: #ffffff;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.45);
+    }
+
+    .audio-info {
+      min-width: 0;
+    }
+
+    .audio-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .audio-sub {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--uit-cyan);
+    }
+
+    .audio-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .eq-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 2.5px;
+      height: 16px;
+      padding-right: 2px;
+    }
+
+    .eq-bars span {
+      width: 3px;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--uit-cyan);
+      transition: height 0.2s ease;
+    }
+
+    .audio-dock.playing .eq-bars span {
+      animation: eqBounce 0.7s infinite ease-in-out;
+    }
+
+    .audio-dock.playing .eq-bars span:nth-child(2) { animation-delay: 0.15s; background: var(--uit-emerald); }
+    .audio-dock.playing .eq-bars span:nth-child(3) { animation-delay: 0.3s; }
+    .audio-dock.playing .eq-bars span:nth-child(4) { animation-delay: 0.45s; background: var(--gold); }
+
+    @keyframes eqBounce {
+      0%, 100% { height: 4px; }
+      50% { height: 16px; }
+    }
+
+    .btn-icon-mini {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: rgba(15, 29, 61, 0.8);
+      color: #e2e8f0;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ==================== LINK GENERATOR MODAL ==================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.8);
+      backdrop-filter: blur(6px);
+      z-index: 60;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 420px;
+      background: #0b1630;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .modal-head h3 {
+      font-size: 15px;
+      color: #ffffff;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .field-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--uit-cyan);
+      margin: 10px 0 5px;
+    }
+
+    .generated-url {
+      width: 100%;
+      background: #060d1f;
+      border: 1px dashed rgba(56, 189, 248, 0.45);
+      border-radius: 10px;
+      padding: 10px;
+      color: #6ee7b7;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      word-break: break-all;
+      margin-top: 10px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .modal-actions button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .btn-copy {
+      background: var(--uit-blue);
+      color: #fff;
+      border: none;
+    }
+
+    .btn-open {
+      background: rgba(16, 185, 129, 0.16);
+      color: #6ee7b7;
+      border: 1px solid rgba(16, 185, 129, 0.45);
+    }
+
+    .toast {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+      background: rgba(16, 185, 129, 0.95);
+      color: #052e16;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      z-index: 80;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 390px) {
+      .stole { width: 50px; height: 295px; }
+      .hero-top-center { padding: 6px 56px 0; }
+      .invite-to-block { padding: 0 50px; }
+      .hero-script-title { font-size: 40px; }
+      .graduate-name { font-size: 44px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toast" id="toast">Đã sao chép!</div>
+
+  <main class="page-shell">
+    <!-- Subtle PCB Circuit Background Overlay -->
+    <svg class="pcb-bg" viewBox="0 0 480 1400" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+      <g stroke="#38bdf8" stroke-width="1.2" fill="none">
+        <path d="M24 90 H75 L105 120 V260 L75 290 H24" />
+        <circle cx="24" cy="90" r="3" fill="#38bdf8" />
+        <circle cx="105" cy="260" r="3" fill="#10b981" />
+        <path d="M456 140 H395 L368 168 V320 L410 362 H456" />
+        <circle cx="456" cy="140" r="3" fill="#38bdf8" />
+        <path d="M36 580 H110 L140 610 V720" />
+        <circle cx="140" cy="720" r="3.5" fill="#10b981" />
+        <path d="M445 640 H365 L335 670 V810 H390" />
+        <circle cx="390" cy="810" r="3.5" fill="#38bdf8" />
+        <path d="M28 1060 H95 L125 1090 V1210" />
+        <path d="M450 1120 H370 L345 1145 V1290" />
+      </g>
+    </svg>
+
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section class="hero">
+      <!-- LEFT UIT GRADUATION STOLE -->
+      <aside class="stole stole-left" aria-hidden="true">
+        <div class="stole-logo-wrap" data-uit-logo-slot></div>
+        <div class="stole-uit-vertical">
+          <span>U</span>
+          <span>I</span>
+          <span>T</span>
+        </div>
+        <div class="stole-uni-small">Trường Đại Học<br />Công Nghệ Thông Tin</div>
+      </aside>
+
+      <!-- RIGHT UIT GRADUATION STOLE -->
+      <aside class="stole stole-right" aria-hidden="true">
+        <div class="stole-right-top">
+          <span class="uit-big">UIT</span>
+          <span class="vnu-sub">VNUHCM</span>
+        </div>
+        <div class="stole-grad-script">Graduation</div>
+        <svg class="stole-cap" viewBox="0 0 64 48" fill="none">
+          <polygon points="32,6 60,18 32,30 4,18" fill="#1d4ed8" />
+          <path d="M16 24 V35 C16 39 23 42 32 42 C41 42 48 39 48 35 V24" fill="#152b7e" />
+          <path d="M54 20 V34" stroke="#facc15" stroke-width="2.5" stroke-linecap="round" />
+          <circle cx="54" cy="36" r="3" fill="#facc15" />
+        </svg>
+      </aside>
+
+      <!-- CENTER HEADER -->
+      <div class="hero-top-center">
+        <div class="uni-badge">
+          <div class="uni-logo-circle" data-uit-logo-slot></div>
+          <div class="uni-title-small">ĐHQG TP.HCM • UIT</div>
+          <div class="uni-title-main">TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN</div>
+        </div>
+
+        <h1 class="hero-script-title">Graduation</h1>
+        <div class="hero-serif-sub">Ceremony</div>
+
+        
+      </div>
+
+      <!-- INVITED GUEST -->
+      <div class="invite-to-block">
+        <div class="invite-label">Thân gửi</div>
+        <div class="guest-name-display" id="guestNameText">Bạn thân mến</div>
+        <div class="invite-label">Tới dự Lễ Tốt Nghiệp</div>
+      </div>
+
+      <!-- LOWER HERO -->
+      <div class="hero-lower">
+        <div class="graduate-name">Nguyễn Vũ Nam</div>
+        <p class="hero-quote">
+          Hy vọng trong bức tranh thanh xuân của tớ sẽ có sự góp mặt của cậu
+        </p>
+
+        <!-- Electronics / Tech Icons Row -->
+        <div class="electronics-strip" aria-label="Embedded & Tech Icons">
+          <!-- ESP32 Module -->
+          <div class="elec-item emerald" title="ESP32-S3">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="7" y="4" width="22" height="28" rx="3" fill="rgba(16,185,129,0.12)" />
+              <rect x="11" y="7" width="14" height="10" rx="1.5" />
+              <circle cx="18" cy="24" r="2.2" fill="#34d399" />
+              <path d="M4 9h3M4 14h3M4 19h3M4 24h3M29 9h3M29 14h3M29 19h3M29 24h3" />
+            </svg>
+            <span>ESP32</span>
+          </div>
+
+          <!-- Laptop -->
+          <div class="elec-item" title="Laptop">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="6" y="7" width="24" height="16" rx="2" fill="rgba(56,189,248,0.1)" />
+              <path d="M3 26h30l-2-3H5l-2 3z" fill="rgba(56,189,248,0.2)" />
+              <path d="M12 13l-2 2 2 2M20 13l2 2-2 2M17 12l-2 6" stroke-linecap="round" />
+            </svg>
+            <span>LAPTOP</span>
+          </div>
+
+          <!-- PC / Monitor -->
+          <div class="elec-item" title="PC Workstation">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="4" y="6" width="20" height="15" rx="2" fill="rgba(56,189,248,0.1)" />
+              <path d="M11 25h6M14 21v4" stroke-linecap="round" />
+              <rect x="26" y="6" width="7" height="19" rx="1.5" />
+              <circle cx="29.5" cy="21" r="1.2" fill="#38bdf8" />
+            </svg>
+            <span>PC_RIG</span>
+          </div>
+
+          <!-- MCU / IC Chip -->
+          <div class="elec-item emerald" title="Microcontroller">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="10" y="10" width="16" height="16" rx="2" fill="rgba(16,185,129,0.12)" />
+              <rect x="14" y="14" width="8" height="8" rx="1" />
+              <path d="M14 5v5M18 5v5M22 5v5M14 26v5M18 26v5M22 26v5M5 14h5M5 18h5M5 22h5M26 14h5M26 18h5M26 22h5" />
+            </svg>
+            <span>MCU</span>
+          </div>
+
+          <!-- PWM Signal -->
+          <div class="elec-item" title="PWM Signal">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M3 23h5V11h6v12h5V11h7v12h7" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="8" cy="11" r="1.5" fill="#facc15" stroke="none" />
+              <circle cx="26" cy="23" r="1.5" fill="#34d399" stroke="none" />
+            </svg>
+            <span>PWM</span>
+          </div>
+        </div>
+
+        <!-- Date Block -->
+        <div class="date-box">
+          <div class="date-month">NOVEMBER</div>
+          <div class="date-row">
+            <div class="date-side">THỨ TƯ</div>
+            <div class="date-day">25</div>
+            <div class="date-side">11:00 - 11:30</div>
+          </div>
+          <div class="date-year">2026</div>
+        </div>
+
+        <!-- Location -->
+        <div class="location-block">
+          <div class="location-uni">TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN</div>
+          <div class="location-addr">Hàn Thuyên, khu phố 6 P, Linh Xuân, Hồ Chí Minh</div>
+          <a class="btn-primary" id="googleMapsBtn" href="https://maps.app.goo.gl/6uQzhuKWAVXduFKZ7" target="_blank" rel="noopener noreferrer">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" />
+              <circle cx="12" cy="9" r="2.5" />
+            </svg>
+            <span>Chỉ đường (Google Maps)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. MEETING POINT & INTERACTIVE MAP ==================== -->
+    <section class="section-block" id="map-section">
+      <h2 class="sec-heading">ĐIỂM HẸN</h2>
+      <div class="meeting-highlight">
+        <span>★</span>
+        <span>Sảnh Tòa A • Trường ĐH CNTT (UIT)</span>
+      </div>
+
+      <div class="map-card">
+        <div class="map-toolbar">
+          <div class="map-status" id="mapStatusText">★ Chạm bản đồ để dẫn đường tới Sảnh Tòa A</div>
+        </div>
+
+        <div class="map-viewport" id="mapViewport" title="Chạm để xem ngôi sao di chuyển theo lộ trình">
+          <svg id="uitMapSvg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="starGlow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="3.5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <linearGradient id="roadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8" />
+                <stop offset="100%" stop-color="#a855f7" />
+              </linearGradient>
+            </defs>
+
+            <!-- OPTIONAL: Custom map.jpg background layer (enabled via CONFIG.useCustomMapImage) -->
+            <image id="customMapImg" href="" x="0" y="0" width="400" height="400" preserveAspectRatio="xMidYMid slice" style="display:none; opacity:0.92;" />
+
+            <!-- DEFAULT: Dark Tech Vector Map of UIT Campus -->
+            <g id="vectorMapLayer">
+              <rect width="400" height="400" fill="#081329" />
+              <!-- Subtle grid -->
+              <g stroke="rgba(56,189,248,0.08)" stroke-width="1">
+                <path d="M0 80 H400 M0 160 H400 M0 240 H400 M0 320 H400" />
+                <path d="M80 0 V400 M160 0 V400 M240 0 V400 M320 0 V400" />
+              </g>
+
+              <!-- Green Campus Zones -->
+              <path d="M125 65 C85 85 80 185 110 235 L48 335 L48 380 L345 380 L345 148 L225 60 Z" fill="rgba(16,185,129,0.14)" stroke="rgba(16,185,129,0.3)" stroke-width="1.2" />
+
+              <!-- Internal Roads -->
+              <g stroke="#1e3a5f" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                <path d="M266 396 V295 L235 255 L268 220" />
+                <path d="M266 346 H46 L160 226 V185" />
+                <path d="M266 310 L338 242 V195 L205 90 L165 110" />
+                <path d="M158 346 V292" />
+                <path d="M175 100 L220 42" />
+              </g>
+
+              <!-- Nhà PVSV / Căn tin -->
+              <path d="M56 38 L82 40 L94 74 L74 88 L52 72 Z" fill="rgba(244,114,182,0.28)" stroke="#f472b6" stroke-width="1.5" />
+              <text x="58" y="106" fill="#fbcfe8" font-size="10.5" font-weight="700" text-anchor="middle">Căn tin / PVSV</text>
+
+              <!-- Cổng 2 & Tòa D -->
+              <rect x="208" y="28" width="16" height="9" rx="2" fill="#94a3b8" />
+              <text x="184" y="24" fill="#cbd5e1" font-size="10" font-weight="700">Cổng 2</text>
+              <rect x="242" y="30" width="32" height="20" rx="3" fill="rgba(168,85,247,0.3)" stroke="#c084fc" stroke-width="1.5" />
+              <text x="258" y="44" fill="#f3e8ff" font-size="10" font-weight="700" text-anchor="middle">Tòa D</text>
+
+              <!-- Sân thể thao -->
+              <path d="M226 56 Q268 62 302 88 Q290 108 264 120 Q232 100 220 76 Z" fill="rgba(132,204,22,0.2)" stroke="#a3e635" stroke-width="1.5" />
+              <text x="262" y="88" fill="#d9f99d" font-size="9.5" font-weight="700" text-anchor="middle">Sân thể thao</text>
+
+              <!-- Tòa B (Curved) -->
+              <path d="M116 90 A64 64 0 0 0 182 184 L166 158 A36 36 0 0 1 134 114 Z" fill="rgba(56,189,248,0.28)" stroke="#38bdf8" stroke-width="1.8" />
+              <text x="128" y="166" fill="#e0f2fe" font-size="11.5" font-weight="800" text-anchor="middle">Tòa B</text>
+
+              <!-- Tòa C -->
+              <polygon points="212,96 312,196 292,216 192,116" fill="rgba(250,204,21,0.25)" stroke="#facc15" stroke-width="1.8" />
+              <text x="252" y="162" fill="#fef08a" font-size="11.5" font-weight="800" text-anchor="middle">Tòa C</text>
+
+              <!-- Tòa E -->
+              <polygon points="262,215 304,256 286,272 246,232" fill="rgba(52,211,153,0.26)" stroke="#34d399" stroke-width="1.8" />
+              <text x="275" y="248" fill="#a7f3d0" font-size="10.5" font-weight="800" text-anchor="middle">Tòa E</text>
+
+              <!-- Tòa A (Điểm hẹn chính) -->
+              <path d="M180 226 L216 226 L232 254 L232 280 L204 298 L164 298 L142 318 L120 302 L120 278 L156 254 Z" fill="rgba(249,115,22,0.34)" stroke="#fb923c" stroke-width="2.2" />
+              <text x="180" y="266" fill="#ffedd5" font-size="12.5" font-weight="800" text-anchor="middle">Tòa A</text>
+              <text x="180" y="280" fill="#fde047" font-size="8.8" font-weight="700" text-anchor="middle">SẢNH ĐIỂM HẸN</text>
+
+              <!-- Bãi đỗ xe -->
+              <rect x="44" y="362" width="106" height="16" rx="3" fill="rgba(59,130,246,0.35)" stroke="#60a5fa" stroke-width="1.8" />
+              <text x="97" y="392" fill="#bfdbfe" font-size="10.5" font-weight="700" text-anchor="middle">Bãi đỗ xe</text>
+
+              <!-- Cổng A -->
+              <rect x="252" y="370" width="26" height="10" rx="2" fill="#fb923c" />
+              <text x="292" y="388" fill="#fed7aa" font-size="11" font-weight="800">Cổng A</text>
+            </g>
+
+            <!-- ANIMATED ROUTE PATH (Always visible above Vector OR Custom Map Image) -->
+            <path id="navRoutePath"
+              d="M 315 372 L 266 372 L 266 346 L 154 346 L 48 346 L 138 258 L 178 272 L 156 218 L 118 176"
+              fill="none"
+              stroke="url(#roadGrad)"
+              stroke-width="3.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="route-dash" />
+
+            <!-- Sparkle Trail Container -->
+            <g id="sparkleTrail"></g>
+
+            <!-- 4 Interactive Waypoint Stars -->
+            <!-- ★1 Cổng A -->
+            <g class="star-node" data-step="0" transform="translate(315, 372)">
+              <circle r="16" fill="rgba(239,68,68,0.22)" class="star-pulse" />
+              <polygon points="0,-13 3.8,-4.5 13,-4 5.8,2.2 8.2,11.5 0,6.5 -8.2,11.5 -5.8,2.2 -13,-4 -3.8,-4.5" fill="#ef4444" stroke="#ffffff" stroke-width="1.2" />
+              <text y="4" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">1</text>
+            </g>
+
+            <!-- ★2 Bãi đỗ xe -->
+            <g class="star-node" data-step="1" transform="translate(154, 368)">
+              <circle r="15" fill="rgba(56,189,248,0.22)" />
+              <polygon points="0,-13 3.8,-4.5 13,-4 5.8,2.2 8.2,11.5 0,6.5 -8.2,11.5 -5.8,2.2 -13,-4 -3.8,-4.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.2" />
+              <text y="4" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">2</text>
+            </g>
+
+            <!-- ★3 Điểm Hẹn: Sảnh Tòa A -->
+            <g class="star-node" data-step="2" transform="translate(178, 272)">
+              <circle r="19" fill="rgba(250,204,21,0.26)" class="star-pulse" />
+              <polygon points="0,-15 4.4,-5.2 15,-4.6 6.8,2.6 9.5,13 0,7.5 -9.5,13 -6.8,2.6 -15,-4.6 -4.4,-5.2" fill="#facc15" stroke="#0f172a" stroke-width="1.2" filter="url(#starGlow)" />
+              <text y="4.5" fill="#0f172a" font-size="11" font-weight="900" text-anchor="middle">3</text>
+            </g>
+
+            <!-- ★4 Chụp choẹt (Tòa B & Khuôn viên) -->
+            <g class="star-node" data-step="3" transform="translate(118, 176)">
+              <circle r="15" fill="rgba(16,185,129,0.24)" />
+              <polygon points="0,-13 3.8,-4.5 13,-4 5.8,2.2 8.2,11.5 0,6.5 -8.2,11.5 -5.8,2.2 -13,-4 -3.8,-4.5" fill="#10b981" stroke="#ffffff" stroke-width="1.2" />
+              <text y="4" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">4</text>
+            </g>
+
+            <!-- MOVING GLOWING STAR MARKER -->
+            <g id="movingStar" transform="translate(315, 372)" filter="url(#starGlow)">
+              <circle r="12" fill="rgba(250,204,21,0.35)" />
+              <polygon points="0,-11 3.2,-3.8 11,-3.3 4.8,1.8 6.8,9.5 0,5.2 -6.8,9.5 -4.8,1.8 -11,-3.3 -3.2,-3.8" fill="#fef08a" stroke="#ffffff" stroke-width="1" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="map-steps">
+          <button type="button" class="step-btn active" data-step-btn="0">
+            <span class="step-num">1</span>
+            <span>Cổng Chính (Cổng A)</span>
+          </button>
+          <button type="button" class="step-btn" data-step-btn="1">
+            <span class="step-num">2</span>
+            <span>Bãi Gửi Xe UIT</span>
+          </button>
+          <button type="button" class="step-btn" data-step-btn="2">
+            <span class="step-num">3</span>
+            <span>Điểm Hẹn: Sảnh Tòa A</span>
+          </button>
+          <button type="button" class="step-btn" data-step-btn="3">
+            <span class="step-num">4</span>
+            <span>Chụp Choẹt (Tòa B)</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. ALBUM OF YOUTH (2 PHOTOS) ==================== -->
+    <section class="section-block" id="album-section">
+      <div class="album-header">
+        <div class="album-top">
+          <span>ALBUM</span>
+          <span class="of-script">of</span>
+          <span aria-hidden="true">🎓</span>
+        </div>
+        <div class="album-youth">YOUTH</div>
+      </div>
+
+      <div class="album-grid">
+        <!-- Photo 1: Nguyễn Vũ Nam -->
+        <article class="photo-card">
+          <div class="photo-frame" id="myPhotoFrame">
+            <img id="myPhotoImg" alt="Ảnh tốt nghiệp Nguyễn Vũ Nam" />
+            <div class="photo-fallback">
+              <span style="font-size:26px;">👨‍🎓</span>
+              <span>Đặt ảnh vào<br /><strong>assets/nam.jpg</strong></span>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-caption">Nguyễn Vũ Nam</div>
+          </div>
+        </article>
+
+        <!-- Photo 2: Guest -->
+        <article class="photo-card">
+          <div class="photo-frame" id="guestPhotoFrame">
+            <img id="guestPhotoImg" alt="Ảnh khách mời" />
+            <div class="photo-fallback">
+              <span style="font-size:26px;">✨</span>
+              <span>Truyền <strong>guest/Khach1.jpg</strong><br />hoặc thêm <strong>guest/guest-default.jpg</strong></span>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-caption" id="guestPhotoCaption">SPECIAL GUEST</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 4. GUESTBOOK (SỔ LƯU BÚT) ==================== -->
+    <section class="section-block" id="guestbook-section">
+      <h2 class="guestbook-script">Sổ lưu bút</h2>
+      <p class="guestbook-sub">
+        Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến mình!
+      </p>
+
+      <form class="wish-form" id="wishForm">
+        <input class="wish-input" id="wishName" type="text" placeholder="Nhập tên của bạn*" required maxlength="60" />
+        <textarea class="wish-textarea" id="wishText" placeholder="Nhập lời chúc của bạn*" required maxlength="400"></textarea>
+        <button type="submit" class="btn-primary">Gửi lời chúc </button>
+      </form>
+
+      <div class="wish-list" id="wishList"></div>
+    </section>
+
+    <!-- ==================== 5. THANK YOU FOOTER ==================== -->
+    <footer class="thank-section">
+      <div class="thank-script">Thank you</div>
+      <p class="thank-text">
+        Cảm ơn mọi người đã đến với mình buổi lễ tốt nghiệp này. Hy vọng với sự có mặt của mọi người ngày hôm nay sẽ là động lực tiếp bước cho mình trên con đường mới.
+      </p>
+      <button type="button" class="admin-trigger" id="openAdminBtn">⚙ Tạo link mời nhanh</button>
+    </footer>
+  </main>
+
+  <!-- ==================== FLOATING AUDIO DOCK ==================== -->
+  <div class="audio-dock" id="audioDock">
+    <div class="audio-left">
+      <button type="button" class="btn-play" id="btnPlayAudio" aria-label="Phát hoặc tạm dừng nhạc">▶</button>
+      <div class="audio-info">
+        <div class="audio-title" id="audioTitleText">Graduation Theme • UIT 2026</div>
+        <div class="audio-sub" id="audioStatusText">Nhấn ▶ để phát nhạc nền</div>
+      </div>
+    </div>
+    <div class="audio-right">
+      <div class="eq-bars" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <button type="button" class="btn-icon-mini" id="btnMuteAudio" title="Tắt / Bật tiếng">🔊</button>
+    </div>
+    <audio id="bgAudio" loop preload="auto"></audio>
+  </div>
+
+  <!-- ==================== QUICK INVITE LINK MODAL ==================== -->
+  <div class="modal-backdrop" id="adminModal" role="dialog" aria-modal="true" aria-label="Tạo link mời nhanh">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3>🔗 Tạo link mời nhanh cho từng bạn</h3>
+        <button type="button" class="modal-close" id="closeAdminBtn">&times;</button>
+      </div>
+      <label class="field-label" for="genGuestName">Tên khách mời (?to=...)</label>
+      <input class="wish-input" id="genGuestName" type="text" placeholder="Ví dụ: Đức Phong" />
+
+      <label class="field-label" for="genGuestImg">Tên file ảnh trong assets/ hoặc URL (?img=...)</label>
+      <input class="wish-input" id="genGuestImg" type="text" placeholder="Ví dụ: khach1.jpg" />
+
+      <div class="generated-url" id="generatedUrlBox"></div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-copy" id="btnCopyInvite">Sao chép link</button>
+        <button type="button" class="btn-open" id="btnPreviewInvite">Mở thử ngay</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* =====================================================================
+       CẤU HÌNH CỐ ĐỊNH ("UPLOAD ONE FOR ALL") - CHỈ CẦN SỬA TẠI ĐÂY NẾU ĐỔI FILE
+       ===================================================================== */
+    const CONFIG = {
+      hostName: "Nguyễn Vũ Nam",
+      defaultGuestName: "Bạn thân mến",
+      logoUrl: "./assets/logo-uit.png",
+      myPhotoUrl: "./assets/nam.jpg",
+      defaultGuestPhotoUrl: "./assets/guest-default.jpg",
+      guestAssetsPrefix: "./assets/",
+      mapImageUrl: "./assets/map.jpg",
+      useCustomMapImage: true, // Đổi thành true nếu muốn dùng ảnh assets/map.jpg dưới lớp ngôi sao động
+      audioUrl: "./assets/music.mp3",
+      audioTitle: "Graduation Theme • UIT 2026",
+      googleMapsUrl: "https://maps.app.goo.gl/6uQzhuKWAVXduFKZ7",
+      storageKey: "uit_grad_nam_2026_wishes_v2"
+    };
+
+    /* Fallback Inline SVG Logo UIT (dùng khi chưa có file ./assets/logo-uit.png) */
+    const UIT_LOGO_FALLBACK_SVG = `
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 46 A44 44 0 0 1 70 15" fill="none" stroke="#2d66b8" stroke-width="4" stroke-linecap="round"/>
+        <path d="M18 54 A46 46 0 0 1 78 20" fill="none" stroke="#2d66b8" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="60" cy="64" rx="46" ry="30" transform="rotate(-28 60 64)" fill="none" stroke="#2d66b8" stroke-width="6.5"/>
+        <circle cx="96" cy="24" r="9.5" fill="#2d66b8"/>
+        <path d="M60 40 C51 50 48 61 52 70 C57 67 63 67 68 70 C72 61 69 50 60 40 Z" fill="#2d66b8"/>
+        <path d="M47 45 C39 54 39 66 46 72 C50 66 51 55 47 45 Z" fill="#2d66b8"/>
+        <path d="M73 45 C69 55 70 66 74 72 C81 66 81 54 73 45 Z" fill="#2d66b8"/>
+        <path d="M32 75 C42 93 78 93 88 75 L74 75 L60 88 L46 75 Z" fill="#2d66b8"/>
+      </svg>
+    `;
+
+    /* Helper: Toast notification */
+    function showToast(msg) {
+      const el = document.getElementById("toast");
+      el.textContent = msg;
+      el.classList.add("show");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => el.classList.remove("show"), 2200);
+    }
+
+    /* Helper: Escape HTML for safe rendering */
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    /* ==================== 1. LOAD FIXED LOGO, PHOTOS & URL PARAMS ==================== */
+    const params = new URLSearchParams(window.location.search);
+    const guestName = (params.get("to") || "").trim() || CONFIG.defaultGuestName;
+    const rawGuestImg = (params.get("img") || "").trim();
+
+    function resolveGuestImage(val) {
+      if (!val) return CONFIG.defaultGuestPhotoUrl;
+      if (/^(https?:\/\/|\/|\.\/|\.\.\/|data:)/i.test(val)) return val;
+      return CONFIG.guestAssetsPrefix + val;
+    }
+
+    // Apply guest name
+    document.getElementById("guestNameText").textContent = guestName;
+    document.getElementById("guestPhotoCaption").textContent = guestName;
+    document.getElementById("googleMapsBtn").href = CONFIG.googleMapsUrl;
+    if (params.get("to")) {
+      document.getElementById("wishName").value = guestName;
+    }
+
+    // Apply UIT Logo to both Hero & Left Stole (with automatic SVG fallback)
+    document.querySelectorAll("[data-uit-logo-slot]").forEach((slot) => {
+      const img = document.createElement("img");
+      img.src = CONFIG.logoUrl;
+      img.alt = "Logo Trường Đại học Công nghệ Thông tin (UIT)";
+      img.onerror = function () {
+        this.onerror = null;
+        slot.innerHTML = UIT_LOGO_FALLBACK_SVG;
+      };
+      slot.appendChild(img);
+    });
+
+    // Apply Album Photos
+    function bindPhoto(imgId, frameId, url) {
+      const img = document.getElementById(imgId);
+      const frame = document.getElementById(frameId);
+      if (!url) {
+        frame.classList.add("is-empty");
+        return;
+      }
+      frame.classList.remove("is-empty");
+      img.onerror = function () {
+        this.onerror = null;
+        frame.classList.add("is-empty");
+      };
+      img.src = url;
+    }
+
+    bindPhoto("myPhotoImg", "myPhotoFrame", CONFIG.myPhotoUrl);
+    bindPhoto("guestPhotoImg", "guestPhotoFrame", resolveGuestImage(rawGuestImg));
+
+    // Apply optional custom map.jpg under animated stars
+    if (CONFIG.useCustomMapImage && CONFIG.mapImageUrl) {
+      const mapImgEl = document.getElementById("customMapImg");
+      const vectorLayer = document.getElementById("vectorMapLayer");
+      const probe = new Image();
+      probe.onload = () => {
+        mapImgEl.setAttribute("href", CONFIG.mapImageUrl);
+        mapImgEl.style.display = "block";
+        vectorLayer.style.display = "none";
+      };
+      probe.src = CONFIG.mapImageUrl;
+    }
+
+    /* ==================== 2. INTERACTIVE MAP STAR ANIMATION ==================== */
+    const routePath = document.getElementById("navRoutePath");
+    const movingStar = document.getElementById("movingStar");
+    const sparkleTrail = document.getElementById("sparkleTrail");
+    const mapStatusText = document.getElementById("mapStatusText");
+    const stepButtons = document.querySelectorAll("[data-step-btn]");
+
+    const WAYPOINTS = [
+      { ratio: 0.0,  label: "★1 Cổng Chính (Cổng A) — Điểm xuất phát" },
+      { ratio: 0.34, label: "★2 Bãi đỗ xe UIT — Rẽ trái từ Cổng A" },
+      { ratio: 0.78, label: "★3 Sảnh Tòa A — Điểm hẹn gặp mặt chính!" },
+      { ratio: 1.0,  label: "★4 Tòa B & Khuôn viên — Check-in chụp ảnh" }
+    ];
+
+    let currentRatio = 0;
+    let animFrameId = null;
+
+    function setActiveStepUI(stepIdx) {
+      stepButtons.forEach((btn, idx) => btn.classList.toggle("active", idx === stepIdx));
+      mapStatusText.textContent = WAYPOINTS[stepIdx].label;
+    }
+
+    function spawnSparkle(x, y) {
+      const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      dot.setAttribute("cx", x);
+      dot.setAttribute("cy", y);
+      dot.setAttribute("r", (Math.random() * 2.2 + 1.4).toFixed(1));
+      dot.setAttribute("fill", Math.random() > 0.4 ? "#fde047" : "#38bdf8");
+      dot.setAttribute("opacity", "0.95");
+      sparkleTrail.appendChild(dot);
+
+      let op = 0.95;
+      const fade = () => {
+        op -= 0.045;
+        if (op <= 0) {
+          dot.remove();
+        } else {
+          dot.setAttribute("opacity", op.toFixed(2));
+          requestAnimationFrame(fade);
+        }
+      };
+      requestAnimationFrame(fade);
+    }
+
+    function animateStarTo(targetRatio, durationMs = 1100, onDone = null) {
+      cancelAnimationFrame(animFrameId);
+      const totalLen = routePath.getTotalLength();
+      const startRatio = currentRatio;
+      const startTime = performance.now();
+      let tick = 0;
+
+      function frame(now) {
+        const elapsed = now - startTime;
+        const t = Math.min(elapsed / durationMs, 1);
+        const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+        currentRatio = startRatio + (targetRatio - startRatio) * eased;
+
+        const pt = routePath.getPointAtLength(currentRatio * totalLen);
+        const rot = (currentRatio * 720).toFixed(1);
+        movingStar.setAttribute("transform", `translate(${pt.x.toFixed(1)}, ${pt.y.toFixed(1)}) rotate(${rot})`);
+
+        if (tick++ % 3 === 0) spawnSparkle(pt.x, pt.y);
+
+        if (t < 1) {
+          animFrameId = requestAnimationFrame(frame);
+        } else if (onDone) {
+          onDone();
+        }
+      }
+      animFrameId = requestAnimationFrame(frame);
+    }
+
+    stepButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const idx = Number(btn.dataset.stepBtn);
+        setActiveStepUI(idx);
+        animateStarTo(WAYPOINTS[idx].ratio, 900);
+      });
+    });
+
+    document.querySelectorAll(".star-node").forEach((node) => {
+      node.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const idx = Number(node.dataset.step);
+        setActiveStepUI(idx);
+        animateStarTo(WAYPOINTS[idx].ratio, 900);
+      });
+    });
+
+    document.getElementById("mapViewport").addEventListener("click", () => {
+      // Map viewport click can jump to step 2 (Điểm Hẹn: Sảnh Tòa A) or remain static per requirement
+    });
+
+    // Subtle entrance animation to Sảnh Tòa A
+    setTimeout(() => {
+      setActiveStepUI(2);
+      animateStarTo(WAYPOINTS[2].ratio, 1500);
+    }, 900);
+
+    /* ==================== 3. GUESTBOOK (SỔ LƯU BÚT) ==================== */
+    const DEFAULT_WISHES = [];
+
+    function loadWishes() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(CONFIG.storageKey));
+        if (Array.isArray(saved) && saved.length > 0) return saved;
+      } catch (_) {}
+      return [...DEFAULT_WISHES];
+    }
+
+    function renderWishes(wishes) {
+      const container = document.getElementById("wishList");
+      container.innerHTML = wishes
+        .map(
+          (w) => `
+          <div class="wish-item">
+            <div class="wish-author"><span>${escapeHtml(w.name)}</span></div>
+            <div class="wish-msg">${escapeHtml(w.text)}</div>
+          </div>`
+        )
+        .join("");
+    }
+
+    let wishesData = loadWishes();
+    renderWishes(wishesData);
+
+    document.getElementById("wishForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nameEl = document.getElementById("wishName");
+      const textEl = document.getElementById("wishText");
+      const nameVal = nameEl.value.trim();
+      const textVal = textEl.value.trim();
+      if (!nameVal || !textVal) return;
+
+      wishesData.unshift({ name: nameVal, text: textVal });
+      try {
+        localStorage.setItem(CONFIG.storageKey, JSON.stringify(wishesData));
+      } catch (_) {}
+
+      renderWishes(wishesData);
+      textEl.value = "";
+      showToast("Đã gửi lời chúc tới Nguyễn Vũ Nam!");
+    });
+
+    /* ==================== 4. FIXED AUDIO PLAYER + FALLBACK CHIME ==================== */
+    const audioEl = document.getElementById("bgAudio");
+    const audioDock = document.getElementById("audioDock");
+    const btnPlayAudio = document.getElementById("btnPlayAudio");
+    const btnMuteAudio = document.getElementById("btnMuteAudio");
+    const audioStatusText = document.getElementById("audioStatusText");
+    document.getElementById("audioTitleText").textContent = CONFIG.audioTitle;
+
+    audioEl.src = CONFIG.audioUrl;
+
+    let isPlaying = false;
+    let useSynthFallback = false;
+    let synthInterval = null;
+    let audioCtx = null;
+
+    audioEl.addEventListener("error", () => {
+      useSynthFallback = true;
+    });
+
+    function playFallbackChimeLoop() {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextClass) return;
+      if (!audioCtx) audioCtx = new AudioContextClass();
+      if (audioCtx.state === "suspended") audioCtx.resume();
+
+      const notes = [261.63, 329.63, 392.0, 493.88, 523.25, 392.0, 329.63, 293.66];
+      let step = 0;
+
+      const triggerNote = () => {
+        if (!isPlaying || audioEl.muted) return;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = "sine";
+        osc.frequency.value = notes[step % notes.length];
+        gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.07, audioCtx.currentTime + 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.9);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.95);
+        step++;
+      };
+
+      triggerNote();
+      synthInterval = setInterval(triggerNote, 820);
+    }
+
+    function stopFallbackChime() {
+      clearInterval(synthInterval);
+      synthInterval = null;
+    }
+
+    function updateAudioUI(playing) {
+      isPlaying = playing;
+      audioDock.classList.toggle("playing", playing);
+      btnPlayAudio.textContent = playing ? "❚❚" : "▶";
+      audioStatusText.textContent = playing
+        ? useSynthFallback
+          ? "Đang phát nhạc demo (chưa có assets/music.mp3)"
+          : "Đang phát nhạc nền..."
+        : "Đã tạm dừng";
+    }
+
+    btnPlayAudio.addEventListener("click", async () => {
+      if (isPlaying) {
+        audioEl.pause();
+        stopFallbackChime();
+        updateAudioUI(false);
+        return;
+      }
+
+      if (!useSynthFallback) {
+        try {
+          await audioEl.play();
+          updateAudioUI(true);
+          return;
+        } catch (_) {
+          useSynthFallback = true;
+        }
+      }
+
+      isPlaying = true;
+      playFallbackChimeLoop();
+      updateAudioUI(true);
+    });
+
+    btnMuteAudio.addEventListener("click", () => {
+      audioEl.muted = !audioEl.muted;
+      btnMuteAudio.textContent = audioEl.muted ? "🔇" : "🔊";
+    });
+
+    /* ==================== 5. QUICK INVITE LINK GENERATOR (?admin=1) ==================== */
+    const adminModal = document.getElementById("adminModal");
+    const genGuestName = document.getElementById("genGuestName");
+    const genGuestImg = document.getElementById("genGuestImg");
+    const generatedUrlBox = document.getElementById("generatedUrlBox");
+
+    function buildInviteUrl() {
+      const base = window.location.origin + window.location.pathname;
+      const q = new URLSearchParams();
+      if (genGuestName.value.trim()) q.set("to", genGuestName.value.trim());
+      if (genGuestImg.value.trim()) q.set("img", genGuestImg.value.trim());
+      const queryStr = q.toString();
+      const fullUrl = queryStr ? `${base}?${queryStr}` : base;
+      generatedUrlBox.textContent = fullUrl;
+      return fullUrl;
+    }
+
+    function openAdminModal() {
+      genGuestName.value = params.get("to") || "";
+      genGuestImg.value = params.get("img") || "";
+      buildInviteUrl();
+      adminModal.classList.add("open");
+    }
+
+    document.getElementById("openAdminBtn").addEventListener("click", openAdminModal);
+    document.getElementById("closeAdminBtn").addEventListener("click", () => adminModal.classList.remove("open"));
+    adminModal.addEventListener("click", (e) => {
+      if (e.target === adminModal) adminModal.classList.remove("open");
+    });
+
+    genGuestName.addEventListener("input", buildInviteUrl);
+    genGuestImg.addEventListener("input", buildInviteUrl);
+
+    document.getElementById("btnCopyInvite").addEventListener("click", async () => {
+      const url = buildInviteUrl();
+      try {
+        await navigator.clipboard.writeText(url);
+        showToast("Đã sao chép link mời!");
+      } catch (_) {
+        showToast("Hãy bôi đen link để sao chép!");
+      }
+    });
+
+    document.getElementById("btnPreviewInvite").addEventListener("click", () => {
+      window.location.href = buildInviteUrl();
+    });
+
+    if (params.get("admin") === "1") {
+      openAdminModal();
+    }
+  </script>
+</body>
+</html>
