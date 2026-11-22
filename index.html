@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thiệp Mời Tốt Nghiệp • Nguyễn Vũ hehe (UIT 2026)</title>
+  <title>Thiệp Mời Tốt Nghiệp • Nguyễn Vũ Nam (UIT 2026)</title>
   <meta name="description" content="Thân mời bạn tới dự Lễ Tốt Nghiệp của Nguyễn Vũ Nam - Trường Đại học Công nghệ Thông tin (UIT)." />
 
   <!-- Google Fonts -->
@@ -59,6 +59,134 @@
       overflow-x: hidden;
     }
 
+    body.lock-scroll {
+      overflow: hidden;
+    }
+
+    /* ==================== COVER SPLASH (100% AUTOPLAY UNLOCK) ==================== */
+    .cover-splash {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(37, 99, 235, 0.32), transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.16), transparent 45%),
+        #050b18;
+      transition: opacity 0.55s ease, transform 0.55s ease, visibility 0.55s ease;
+    }
+
+    .cover-splash.hidden {
+      opacity: 0;
+      transform: translateY(-24px);
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .cover-card {
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      padding: 34px 24px 28px;
+      border-radius: 24px;
+      background: linear-gradient(160deg, rgba(13, 25, 52, 0.94), rgba(7, 15, 34, 0.96));
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .cover-logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 8px;
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.28), 0 10px 26px rgba(37, 99, 235, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cover-logo img,
+    .cover-logo svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .cover-kicker {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      letter-spacing: 2px;
+      color: var(--uit-cyan);
+      margin-bottom: 6px;
+    }
+
+    .cover-title {
+      font-family: var(--font-script);
+      font-size: 44px;
+      line-height: 1.1;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .cover-for-label {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--text-soft);
+    }
+
+    .cover-guest {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 700;
+      color: #6ee7b7;
+      margin: 4px 0 22px;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed rgba(56, 189, 248, 0.45);
+      display: inline-block;
+      min-width: 180px;
+    }
+
+    .btn-open-card {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(147, 197, 253, 0.55);
+      background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 10px 28px rgba(37, 99, 235, 0.45);
+      animation: pulseOpen 2s infinite;
+    }
+
+    @keyframes pulseOpen {
+      0%, 100% { transform: scale(1); box-shadow: 0 10px 28px rgba(37, 99, 235, 0.45); }
+      50% { transform: scale(1.025); box-shadow: 0 12px 34px rgba(16, 185, 129, 0.55); }
+    }
+
+    .btn-open-silent {
+      margin-top: 12px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* ==================== MAIN SHELL ==================== */
     .page-shell {
       width: 100%;
       max-width: 480px;
@@ -93,7 +221,6 @@
         linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, transparent 22%);
     }
 
-    /* Graduation Stoles mimicking real UIT white-blue sash + emerald robe edge */
     .stole {
       position: absolute;
       top: 0;
@@ -209,7 +336,6 @@
       height: 26px;
     }
 
-    /* Center Hero Upper Column (clears stoles on mobile) */
     .hero-top-center {
       padding: 8px 66px 0;
       display: flex;
@@ -279,35 +405,6 @@
       margin-bottom: 14px;
     }
 
-    .tech-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(56, 189, 248, 0.32);
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--uit-cyan);
-      margin-bottom: 16px;
-    }
-
-    .led-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--uit-emerald);
-      box-shadow: 0 0 8px var(--uit-emerald);
-      animation: blinkLed 1.4s infinite;
-    }
-
-    @keyframes blinkLed {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.3; transform: scale(0.82); }
-    }
-
-    /* Invitation Receiver */
     .invite-to-block {
       margin-top: 4px;
       padding: 0 58px;
@@ -333,7 +430,6 @@
       text-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
     }
 
-    /* Full-width lower hero below stoles */
     .hero-lower {
       margin-top: 22px;
       padding: 0 8px;
@@ -359,7 +455,6 @@
       margin: 0 auto 20px;
     }
 
-    /* Electronics Icon Strip (ESP32, Laptop, PC, MCU, PWM) */
     .electronics-strip {
       display: flex;
       align-items: center;
@@ -394,7 +489,6 @@
       color: #34d399;
     }
 
-    /* Date Card */
     .date-box {
       margin: 0 auto 22px;
       padding: 18px 14px;
@@ -449,18 +543,8 @@
       margin-top: 6px;
     }
 
-    /* Location */
     .location-block {
       margin-top: 8px;
-    }
-
-    .location-tag {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 2.5px;
-      color: var(--uit-emerald);
-      text-transform: uppercase;
-      margin-bottom: 6px;
     }
 
     .location-uni {
@@ -502,20 +586,16 @@
       box-shadow: 0 12px 28px rgba(56, 189, 248, 0.42);
     }
 
+    .btn-primary:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
     /* ==================== SECTION HEADERS ==================== */
     .section-block {
       padding: 34px 18px;
       border-bottom: 1px solid var(--border-tech);
-    }
-
-    .sec-kicker {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--uit-cyan);
-      text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 6px;
     }
 
     .sec-heading {
@@ -567,24 +647,6 @@
       display: flex;
       align-items: center;
       gap: 6px;
-    }
-
-    .btn-tour {
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(250, 204, 21, 0.55);
-      background: rgba(250, 204, 21, 0.14);
-      color: #fde047;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .btn-tour:hover {
-      background: rgba(250, 204, 21, 0.24);
-      transform: scale(1.03);
     }
 
     .map-viewport {
@@ -784,13 +846,6 @@
       text-align: center;
     }
 
-    .photo-tag {
-      font-family: var(--font-mono);
-      font-size: 9.5px;
-      color: var(--uit-emerald);
-      letter-spacing: 1px;
-    }
-
     .photo-caption {
       font-size: 13px;
       font-weight: 700;
@@ -827,7 +882,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .wish-input,
@@ -852,6 +907,15 @@
     .wish-textarea {
       min-height: 78px;
       resize: vertical;
+    }
+
+    .wish-sync-note {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--uit-emerald);
+      text-align: center;
+      margin-bottom: 10px;
+      min-height: 15px;
     }
 
     .wish-list {
@@ -888,12 +952,29 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
+    }
+
+    .wish-time {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 500;
+      color: var(--text-muted);
     }
 
     .wish-msg {
       font-size: 13.5px;
       color: var(--text-main);
       line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    .wish-empty {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      padding: 14px 8px;
+      font-style: italic;
     }
 
     /* ==================== FOOTER ==================== */
@@ -919,13 +1000,6 @@
       line-height: 1.55;
       max-width: 360px;
       margin: 0 auto 22px;
-    }
-
-    .footer-sign {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      color: var(--text-muted);
-      letter-spacing: 1px;
     }
 
     .admin-trigger {
@@ -1167,7 +1241,7 @@
       font-size: 13px;
       padding: 9px 18px;
       border-radius: 999px;
-      z-index: 80;
+      z-index: 100;
       opacity: 0;
       pointer-events: none;
       transition: all 0.25s ease;
@@ -1187,8 +1261,23 @@
     }
   </style>
 </head>
-<body>
+<body class="lock-scroll">
   <div class="toast" id="toast">Đã sao chép!</div>
+
+  <!-- ==================== COVER SPLASH (CHẠM MỞ THIỆP = AUTOPLAY 100%) ==================== -->
+  <div class="cover-splash" id="coverSplash">
+    <div class="cover-card">
+      <div class="cover-logo" data-uit-logo-slot></div>
+      <div class="cover-kicker">UIT • GRADUATION INVITATION</div>
+      <div class="cover-title">Thiệp Mời</div>
+      <div class="cover-for-label">Trân trọng kính mời</div>
+      <div class="cover-guest" id="coverGuestName">Bạn thân mến</div>
+      <button type="button" class="btn-open-card" id="btnOpenWithMusic">
+        <span>✉</span>
+        <span>Mở thiệp </span>
+      </button>
+    </div>
+  </div>
 
   <main class="page-shell">
     <!-- Subtle PCB Circuit Background Overlay -->
@@ -1246,8 +1335,6 @@
 
         <h1 class="hero-script-title">Graduation</h1>
         <div class="hero-serif-sub">Ceremony</div>
-
-        
       </div>
 
       <!-- INVITED GUEST -->
@@ -1266,7 +1353,6 @@
 
         <!-- Electronics / Tech Icons Row -->
         <div class="electronics-strip" aria-label="Embedded & Tech Icons">
-          <!-- ESP32 Module -->
           <div class="elec-item emerald" title="ESP32-S3">
             <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
               <rect x="7" y="4" width="22" height="28" rx="3" fill="rgba(16,185,129,0.12)" />
@@ -1277,7 +1363,6 @@
             <span>ESP32</span>
           </div>
 
-          <!-- Laptop -->
           <div class="elec-item" title="Laptop">
             <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
               <rect x="6" y="7" width="24" height="16" rx="2" fill="rgba(56,189,248,0.1)" />
@@ -1287,7 +1372,6 @@
             <span>LAPTOP</span>
           </div>
 
-          <!-- PC / Monitor -->
           <div class="elec-item" title="PC Workstation">
             <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
               <rect x="4" y="6" width="20" height="15" rx="2" fill="rgba(56,189,248,0.1)" />
@@ -1298,7 +1382,6 @@
             <span>PC_RIG</span>
           </div>
 
-          <!-- MCU / IC Chip -->
           <div class="elec-item emerald" title="Microcontroller">
             <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
               <rect x="10" y="10" width="16" height="16" rx="2" fill="rgba(16,185,129,0.12)" />
@@ -1308,7 +1391,6 @@
             <span>MCU</span>
           </div>
 
-          <!-- PWM Signal -->
           <div class="elec-item" title="PWM Signal">
             <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M3 23h5V11h6v12h5V11h7v12h7" stroke-linecap="round" stroke-linejoin="round" />
@@ -1339,7 +1421,7 @@
               <path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" />
               <circle cx="12" cy="9" r="2.5" />
             </svg>
-            <span>Chỉ đường (Google Maps)</span>
+            <span>Google Maps</span>
           </a>
         </div>
       </div>
@@ -1355,10 +1437,10 @@
 
       <div class="map-card">
         <div class="map-toolbar">
-          <div class="map-status" id="mapStatusText">★ Chạm bản đồ để dẫn đường tới Sảnh Tòa A</div>
+          <div class="map-status" id="mapStatusText">★ Chạm các điểm bên dưới để xem lộ trình tới Sảnh Tòa A</div>
         </div>
 
-        <div class="map-viewport" id="mapViewport" title="Chạm để xem ngôi sao di chuyển theo lộ trình">
+        <div class="map-viewport" id="mapViewport" title="Chạm các ngôi sao để xem lộ trình">
           <svg id="uitMapSvg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <filter id="starGlow" x="-40%" y="-40%" width="180%" height="180%">
@@ -1374,22 +1456,19 @@
               </linearGradient>
             </defs>
 
-            <!-- OPTIONAL: Custom map.jpg background layer (enabled via CONFIG.useCustomMapImage) -->
+            <!-- Custom map.jpg background layer -->
             <image id="customMapImg" href="" x="0" y="0" width="400" height="400" preserveAspectRatio="xMidYMid slice" style="display:none; opacity:0.92;" />
 
-            <!-- DEFAULT: Dark Tech Vector Map of UIT Campus -->
+            <!-- Fallback Vector Map -->
             <g id="vectorMapLayer">
               <rect width="400" height="400" fill="#081329" />
-              <!-- Subtle grid -->
               <g stroke="rgba(56,189,248,0.08)" stroke-width="1">
                 <path d="M0 80 H400 M0 160 H400 M0 240 H400 M0 320 H400" />
                 <path d="M80 0 V400 M160 0 V400 M240 0 V400 M320 0 V400" />
               </g>
 
-              <!-- Green Campus Zones -->
               <path d="M125 65 C85 85 80 185 110 235 L48 335 L48 380 L345 380 L345 148 L225 60 Z" fill="rgba(16,185,129,0.14)" stroke="rgba(16,185,129,0.3)" stroke-width="1.2" />
 
-              <!-- Internal Roads -->
               <g stroke="#1e3a5f" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none">
                 <path d="M266 396 V295 L235 255 L268 220" />
                 <path d="M266 346 H46 L160 226 V185" />
@@ -1398,47 +1477,38 @@
                 <path d="M175 100 L220 42" />
               </g>
 
-              <!-- Nhà PVSV / Căn tin -->
               <path d="M56 38 L82 40 L94 74 L74 88 L52 72 Z" fill="rgba(244,114,182,0.28)" stroke="#f472b6" stroke-width="1.5" />
               <text x="58" y="106" fill="#fbcfe8" font-size="10.5" font-weight="700" text-anchor="middle">Căn tin / PVSV</text>
 
-              <!-- Cổng 2 & Tòa D -->
               <rect x="208" y="28" width="16" height="9" rx="2" fill="#94a3b8" />
               <text x="184" y="24" fill="#cbd5e1" font-size="10" font-weight="700">Cổng 2</text>
               <rect x="242" y="30" width="32" height="20" rx="3" fill="rgba(168,85,247,0.3)" stroke="#c084fc" stroke-width="1.5" />
               <text x="258" y="44" fill="#f3e8ff" font-size="10" font-weight="700" text-anchor="middle">Tòa D</text>
 
-              <!-- Sân thể thao -->
               <path d="M226 56 Q268 62 302 88 Q290 108 264 120 Q232 100 220 76 Z" fill="rgba(132,204,22,0.2)" stroke="#a3e635" stroke-width="1.5" />
               <text x="262" y="88" fill="#d9f99d" font-size="9.5" font-weight="700" text-anchor="middle">Sân thể thao</text>
 
-              <!-- Tòa B (Curved) -->
               <path d="M116 90 A64 64 0 0 0 182 184 L166 158 A36 36 0 0 1 134 114 Z" fill="rgba(56,189,248,0.28)" stroke="#38bdf8" stroke-width="1.8" />
               <text x="128" y="166" fill="#e0f2fe" font-size="11.5" font-weight="800" text-anchor="middle">Tòa B</text>
 
-              <!-- Tòa C -->
               <polygon points="212,96 312,196 292,216 192,116" fill="rgba(250,204,21,0.25)" stroke="#facc15" stroke-width="1.8" />
               <text x="252" y="162" fill="#fef08a" font-size="11.5" font-weight="800" text-anchor="middle">Tòa C</text>
 
-              <!-- Tòa E -->
               <polygon points="262,215 304,256 286,272 246,232" fill="rgba(52,211,153,0.26)" stroke="#34d399" stroke-width="1.8" />
               <text x="275" y="248" fill="#a7f3d0" font-size="10.5" font-weight="800" text-anchor="middle">Tòa E</text>
 
-              <!-- Tòa A (Điểm hẹn chính) -->
               <path d="M180 226 L216 226 L232 254 L232 280 L204 298 L164 298 L142 318 L120 302 L120 278 L156 254 Z" fill="rgba(249,115,22,0.34)" stroke="#fb923c" stroke-width="2.2" />
               <text x="180" y="266" fill="#ffedd5" font-size="12.5" font-weight="800" text-anchor="middle">Tòa A</text>
               <text x="180" y="280" fill="#fde047" font-size="8.8" font-weight="700" text-anchor="middle">SẢNH ĐIỂM HẸN</text>
 
-              <!-- Bãi đỗ xe -->
               <rect x="44" y="362" width="106" height="16" rx="3" fill="rgba(59,130,246,0.35)" stroke="#60a5fa" stroke-width="1.8" />
               <text x="97" y="392" fill="#bfdbfe" font-size="10.5" font-weight="700" text-anchor="middle">Bãi đỗ xe</text>
 
-              <!-- Cổng A -->
               <rect x="252" y="370" width="26" height="10" rx="2" fill="#fb923c" />
               <text x="292" y="388" fill="#fed7aa" font-size="11" font-weight="800">Cổng A</text>
             </g>
 
-            <!-- ANIMATED ROUTE PATH (Always visible above Vector OR Custom Map Image) -->
+            <!-- ANIMATED ROUTE PATH -->
             <path id="navRoutePath"
               d="M 315 372 L 266 372 L 266 346 L 154 346 L 48 346 L 138 258 L 178 272 L 156 218 L 118 176"
               fill="none"
@@ -1448,32 +1518,27 @@
               stroke-linejoin="round"
               class="route-dash" />
 
-            <!-- Sparkle Trail Container -->
             <g id="sparkleTrail"></g>
 
             <!-- 4 Interactive Waypoint Stars -->
-            <!-- ★1 Cổng A -->
             <g class="star-node" data-step="0" transform="translate(315, 372)">
               <circle r="16" fill="rgba(239,68,68,0.22)" class="star-pulse" />
               <polygon points="0,-13 3.8,-4.5 13,-4 5.8,2.2 8.2,11.5 0,6.5 -8.2,11.5 -5.8,2.2 -13,-4 -3.8,-4.5" fill="#ef4444" stroke="#ffffff" stroke-width="1.2" />
               <text y="4" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">1</text>
             </g>
 
-            <!-- ★2 Bãi đỗ xe -->
             <g class="star-node" data-step="1" transform="translate(154, 368)">
               <circle r="15" fill="rgba(56,189,248,0.22)" />
               <polygon points="0,-13 3.8,-4.5 13,-4 5.8,2.2 8.2,11.5 0,6.5 -8.2,11.5 -5.8,2.2 -13,-4 -3.8,-4.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.2" />
               <text y="4" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">2</text>
             </g>
 
-            <!-- ★3 Điểm Hẹn: Sảnh Tòa A -->
             <g class="star-node" data-step="2" transform="translate(178, 272)">
               <circle r="19" fill="rgba(250,204,21,0.26)" class="star-pulse" />
               <polygon points="0,-15 4.4,-5.2 15,-4.6 6.8,2.6 9.5,13 0,7.5 -9.5,13 -6.8,2.6 -15,-4.6 -4.4,-5.2" fill="#facc15" stroke="#0f172a" stroke-width="1.2" filter="url(#starGlow)" />
               <text y="4.5" fill="#0f172a" font-size="11" font-weight="900" text-anchor="middle">3</text>
             </g>
 
-            <!-- ★4 Chụp choẹt (Tòa B & Khuôn viên) -->
             <g class="star-node" data-step="3" transform="translate(118, 176)">
               <circle r="15" fill="rgba(16,185,129,0.24)" />
               <polygon points="0,-13 3.8,-4.5 13,-4 5.8,2.2 8.2,11.5 0,6.5 -8.2,11.5 -5.8,2.2 -13,-4 -3.8,-4.5" fill="#10b981" stroke="#ffffff" stroke-width="1.2" />
@@ -1503,7 +1568,7 @@
           </button>
           <button type="button" class="step-btn" data-step-btn="3">
             <span class="step-num">4</span>
-            <span>Chụp Choẹt (Tòa B)</span>
+            <span>Chụp Choẹt</span>
           </button>
         </div>
       </div>
@@ -1521,7 +1586,6 @@
       </div>
 
       <div class="album-grid">
-        <!-- Photo 1: Nguyễn Vũ Nam -->
         <article class="photo-card">
           <div class="photo-frame" id="myPhotoFrame">
             <img id="myPhotoImg" alt="Ảnh tốt nghiệp Nguyễn Vũ Nam" />
@@ -1535,13 +1599,12 @@
           </div>
         </article>
 
-        <!-- Photo 2: Guest -->
         <article class="photo-card">
           <div class="photo-frame" id="guestPhotoFrame">
             <img id="guestPhotoImg" alt="Ảnh khách mời" />
             <div class="photo-fallback">
               <span style="font-size:26px;">✨</span>
-              <span>Truyền <strong>guest/Khach1.jpg</strong><br />hoặc thêm <strong>guest/guest-default.jpg</strong></span>
+              <span>Truyền <strong>?img=khach1.jpg</strong><br />hoặc thêm <strong>assets/guest-default.jpg</strong></span>
             </div>
           </div>
           <div class="photo-meta">
@@ -1561,9 +1624,10 @@
       <form class="wish-form" id="wishForm">
         <input class="wish-input" id="wishName" type="text" placeholder="Nhập tên của bạn*" required maxlength="60" />
         <textarea class="wish-textarea" id="wishText" placeholder="Nhập lời chúc của bạn*" required maxlength="400"></textarea>
-        <button type="submit" class="btn-primary">Gửi lời chúc </button>
+        <button type="submit" class="btn-primary" id="btnSubmitWish">Gửi lời chúc</button>
       </form>
 
+      <div class="wish-sync-note" id="wishSyncNote"></div>
       <div class="wish-list" id="wishList"></div>
     </section>
 
@@ -1583,7 +1647,7 @@
       <button type="button" class="btn-play" id="btnPlayAudio" aria-label="Phát hoặc tạm dừng nhạc">▶</button>
       <div class="audio-info">
         <div class="audio-title" id="audioTitleText">Graduation Theme • UIT 2026</div>
-        <div class="audio-sub" id="audioStatusText">Nhấn ▶ để phát nhạc nền</div>
+        <div class="audio-sub" id="audioStatusText">Đang sẵn sàng phát nhạc...</div>
       </div>
     </div>
     <div class="audio-right">
@@ -1592,7 +1656,7 @@
       </div>
       <button type="button" class="btn-icon-mini" id="btnMuteAudio" title="Tắt / Bật tiếng">🔊</button>
     </div>
-    <audio id="bgAudio" loop preload="auto"></audio>
+    <audio id="bgAudio" loop preload="auto" playsinline></audio>
   </div>
 
   <!-- ==================== QUICK INVITE LINK MODAL ==================== -->
@@ -1619,7 +1683,7 @@
 
   <script>
     /* =====================================================================
-       CẤU HÌNH CỐ ĐỊNH ("UPLOAD ONE FOR ALL") - CHỈ CẦN SỬA TẠI ĐÂY NẾU ĐỔI FILE
+       CẤU HÌNH CỐ ĐỊNH ("UPLOAD ONE FOR ALL")
        ===================================================================== */
     const CONFIG = {
       hostName: "Nguyễn Vũ Nam",
@@ -1629,14 +1693,16 @@
       defaultGuestPhotoUrl: "./assets/guest-default.jpg",
       guestAssetsPrefix: "./assets/",
       mapImageUrl: "./assets/map.jpg",
-      useCustomMapImage: true, // Đổi thành true nếu muốn dùng ảnh assets/map.jpg dưới lớp ngôi sao động
+      useCustomMapImage: true,
       audioUrl: "./assets/music.mp3",
       audioTitle: "Graduation Theme • UIT 2026",
+      defaultVolume: 0.55,
+      enableCoverSplash: true,
       googleMapsUrl: "https://maps.app.goo.gl/6uQzhuKWAVXduFKZ7",
+      wishesApiUrl: "https://script.google.com/macros/s/AKfycbwvlGOAZ3IFe-YVo-nb9OD4fxo7jsVh3YlpI1kH_-Fjc2rT9kZa0wKU42gBFQGO06qb/exec",
       storageKey: "uit_grad_nam_2026_wishes_v2"
     };
 
-    /* Fallback Inline SVG Logo UIT (dùng khi chưa có file ./assets/logo-uit.png) */
     const UIT_LOGO_FALLBACK_SVG = `
       <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
         <path d="M22 46 A44 44 0 0 1 70 15" fill="none" stroke="#2d66b8" stroke-width="4" stroke-linecap="round"/>
@@ -1650,16 +1716,14 @@
       </svg>
     `;
 
-    /* Helper: Toast notification */
     function showToast(msg) {
       const el = document.getElementById("toast");
       el.textContent = msg;
       el.classList.add("show");
       clearTimeout(window.__toastTimer);
-      window.__toastTimer = setTimeout(() => el.classList.remove("show"), 2200);
+      window.__toastTimer = setTimeout(() => el.classList.remove("show"), 2400);
     }
 
-    /* Helper: Escape HTML for safe rendering */
     function escapeHtml(str) {
       return String(str)
         .replace(/&/g, "&amp;")
@@ -1680,7 +1744,7 @@
       return CONFIG.guestAssetsPrefix + val;
     }
 
-    // Apply guest name
+    document.getElementById("coverGuestName").textContent = guestName;
     document.getElementById("guestNameText").textContent = guestName;
     document.getElementById("guestPhotoCaption").textContent = guestName;
     document.getElementById("googleMapsBtn").href = CONFIG.googleMapsUrl;
@@ -1688,7 +1752,6 @@
       document.getElementById("wishName").value = guestName;
     }
 
-    // Apply UIT Logo to both Hero & Left Stole (with automatic SVG fallback)
     document.querySelectorAll("[data-uit-logo-slot]").forEach((slot) => {
       const img = document.createElement("img");
       img.src = CONFIG.logoUrl;
@@ -1700,7 +1763,6 @@
       slot.appendChild(img);
     });
 
-    // Apply Album Photos
     function bindPhoto(imgId, frameId, url) {
       const img = document.getElementById(imgId);
       const frame = document.getElementById(frameId);
@@ -1719,7 +1781,6 @@
     bindPhoto("myPhotoImg", "myPhotoFrame", CONFIG.myPhotoUrl);
     bindPhoto("guestPhotoImg", "guestPhotoFrame", resolveGuestImage(rawGuestImg));
 
-    // Apply optional custom map.jpg under animated stars
     if (CONFIG.useCustomMapImage && CONFIG.mapImageUrl) {
       const mapImgEl = document.getElementById("customMapImg");
       const vectorLayer = document.getElementById("vectorMapLayer");
@@ -1821,20 +1882,33 @@
       });
     });
 
-    document.getElementById("mapViewport").addEventListener("click", () => {
-      // Map viewport click can jump to step 2 (Điểm Hẹn: Sảnh Tòa A) or remain static per requirement
-    });
-
-    // Subtle entrance animation to Sảnh Tòa A
-    setTimeout(() => {
-      setActiveStepUI(2);
-      animateStarTo(WAYPOINTS[2].ratio, 1500);
-    }, 900);
-
-    /* ==================== 3. GUESTBOOK (SỔ LƯU BÚT) ==================== */
+    /* ==================== 3. GUESTBOOK (GOOGLE SHEETS + LOCAL FALLBACK) ==================== */
     const DEFAULT_WISHES = [];
+    const wishListEl = document.getElementById("wishList");
+    const wishSyncNote = document.getElementById("wishSyncNote");
+    const btnSubmitWish = document.getElementById("btnSubmitWish");
+    let wishesData = [...DEFAULT_WISHES];
 
-    function loadWishes() {
+    function renderWishes(list) {
+      if (!list || list.length === 0) {
+        wishListEl.innerHTML = `<div class="wish-empty">Chưa có lời chúc nào. Hãy là người đầu tiên gửi lời chúc tới Nam nhé!</div>`;
+        return;
+      }
+      wishListEl.innerHTML = list
+        .map(
+          (w) => `
+          <div class="wish-item">
+            <div class="wish-author">
+              <span>${escapeHtml(w.name)}</span>
+              ${w.time ? `<span class="wish-time">${escapeHtml(w.time)}</span>` : ""}
+            </div>
+            <div class="wish-msg">${escapeHtml(w.text)}</div>
+          </div>`
+        )
+        .join("");
+    }
+
+    function loadLocalWishes() {
       try {
         const saved = JSON.parse(localStorage.getItem(CONFIG.storageKey));
         if (Array.isArray(saved) && saved.length > 0) return saved;
@@ -1842,23 +1916,32 @@
       return [...DEFAULT_WISHES];
     }
 
-    function renderWishes(wishes) {
-      const container = document.getElementById("wishList");
-      container.innerHTML = wishes
-        .map(
-          (w) => `
-          <div class="wish-item">
-            <div class="wish-author"><span>${escapeHtml(w.name)}</span></div>
-            <div class="wish-msg">${escapeHtml(w.text)}</div>
-          </div>`
-        )
-        .join("");
+    async function initWishes() {
+      const api = (CONFIG.wishesApiUrl || "").trim();
+      if (!api) {
+        wishesData = loadLocalWishes();
+        renderWishes(wishesData);
+        return;
+      }
+
+      wishSyncNote.textContent = "⏳ Đang tải lời chúc mới nhất...";
+      try {
+        const res = await fetch(api, { method: "GET" });
+        const json = await res.json();
+        const cloudWishes = Array.isArray(json.data) ? json.data : [];
+        wishesData = [...cloudWishes, ...DEFAULT_WISHES];
+        renderWishes(wishesData);
+        wishSyncNote.textContent = wishesData.length > 0 ? `✓ Đã đồng bộ ${wishesData.length} lời chúc` : "";
+      } catch (_) {
+        wishesData = loadLocalWishes();
+        renderWishes(wishesData);
+        wishSyncNote.textContent = "";
+      }
     }
 
-    let wishesData = loadWishes();
-    renderWishes(wishesData);
+    initWishes();
 
-    document.getElementById("wishForm").addEventListener("submit", (e) => {
+    document.getElementById("wishForm").addEventListener("submit", async (e) => {
       e.preventDefault();
       const nameEl = document.getElementById("wishName");
       const textEl = document.getElementById("wishText");
@@ -1866,25 +1949,56 @@
       const textVal = textEl.value.trim();
       if (!nameVal || !textVal) return;
 
-      wishesData.unshift({ name: nameVal, text: textVal });
-      try {
-        localStorage.setItem(CONFIG.storageKey, JSON.stringify(wishesData));
-      } catch (_) {}
+      const newWish = {
+        name: nameVal,
+        text: textVal,
+        time: new Date().toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" })
+      };
 
-      renderWishes(wishesData);
-      textEl.value = "";
-      showToast("Đã gửi lời chúc tới Nguyễn Vũ Nam!");
+      const api = (CONFIG.wishesApiUrl || "").trim();
+      btnSubmitWish.disabled = true;
+      btnSubmitWish.textContent = "Đang gửi...";
+
+      if (api) {
+        try {
+          await fetch(api, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify({ name: nameVal, text: textVal })
+          });
+          wishesData.unshift(newWish);
+          renderWishes(wishesData);
+          textEl.value = "";
+          wishSyncNote.textContent = `✓ Đã lưu lời chúc (${wishesData.length} lời chúc)`;
+          showToast("Đã lưu lời chúc tới Nguyễn Vũ Nam!");
+        } catch (_) {
+          showToast("Lỗi kết nối, vui lòng thử gửi lại!");
+        }
+      } else {
+        wishesData.unshift(newWish);
+        try {
+          localStorage.setItem(CONFIG.storageKey, JSON.stringify(wishesData));
+        } catch (_) {}
+        renderWishes(wishesData);
+        textEl.value = "";
+        showToast("Đã gửi lời chúc tới Nguyễn Vũ Nam!");
+      }
+
+      btnSubmitWish.disabled = false;
+      btnSubmitWish.textContent = "Gửi lời chúc";
     });
 
-    /* ==================== 4. FIXED AUDIO PLAYER + FALLBACK CHIME ==================== */
+    /* ==================== 4. AUDIO AUTOPLAY (COVER SPLASH + FIRST TOUCH) ==================== */
     const audioEl = document.getElementById("bgAudio");
     const audioDock = document.getElementById("audioDock");
     const btnPlayAudio = document.getElementById("btnPlayAudio");
     const btnMuteAudio = document.getElementById("btnMuteAudio");
     const audioStatusText = document.getElementById("audioStatusText");
+    const coverSplash = document.getElementById("coverSplash");
     document.getElementById("audioTitleText").textContent = CONFIG.audioTitle;
 
     audioEl.src = CONFIG.audioUrl;
+    audioEl.volume = CONFIG.defaultVolume;
 
     let isPlaying = false;
     let useSynthFallback = false;
@@ -1911,7 +2025,7 @@
         osc.type = "sine";
         osc.frequency.value = notes[step % notes.length];
         gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.07, audioCtx.currentTime + 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.06, audioCtx.currentTime + 0.08);
         gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.9);
         osc.connect(gain);
         gain.connect(audioCtx.destination);
@@ -1940,6 +2054,75 @@
         : "Đã tạm dừng";
     }
 
+    async function startAudio(allowFallback = true) {
+      if (isPlaying) return true;
+
+      if (!useSynthFallback) {
+        try {
+          await audioEl.play();
+          updateAudioUI(true);
+          return true;
+        } catch (err) {
+          if (err && err.name === "NotAllowedError") {
+            audioStatusText.textContent = "Chạm màn hình để bật nhạc nền";
+            return false;
+          }
+          useSynthFallback = true;
+        }
+      }
+
+      if (allowFallback) {
+        isPlaying = true;
+        playFallbackChimeLoop();
+        updateAudioUI(true);
+        return true;
+      }
+      return false;
+    }
+
+    function dismissCover(playMusic) {
+      if (playMusic) {
+        startAudio(true);
+      } else {
+        updateAudioUI(false);
+      }
+      coverSplash.classList.add("hidden");
+      document.body.classList.remove("lock-scroll");
+      setTimeout(() => {
+        setActiveStepUI(2);
+        animateStarTo(WAYPOINTS[2].ratio, 1500);
+      }, 650);
+    }
+
+    document.getElementById("btnOpenWithMusic").addEventListener("click", () => dismissCover(true));
+    document.getElementById("btnOpenSilent").addEventListener("click", () => dismissCover(false));
+
+    if (!CONFIG.enableCoverSplash || params.get("admin") === "1") {
+      coverSplash.classList.add("hidden");
+      document.body.classList.remove("lock-scroll");
+
+      const unlockOnce = async (e) => {
+        if (e.target && e.target.closest("#audioDock")) return;
+        if (await startAudio(true)) {
+          ["pointerdown", "touchstart", "click"].forEach((ev) =>
+            document.removeEventListener(ev, unlockOnce, true)
+          );
+        }
+      };
+
+      window.addEventListener("load", async () => {
+        if (!(await startAudio(false))) {
+          ["pointerdown", "touchstart", "click"].forEach((ev) =>
+            document.addEventListener(ev, unlockOnce, true)
+          );
+        }
+        setTimeout(() => {
+          setActiveStepUI(2);
+          animateStarTo(WAYPOINTS[2].ratio, 1500);
+        }, 700);
+      });
+    }
+
     btnPlayAudio.addEventListener("click", async () => {
       if (isPlaying) {
         audioEl.pause();
@@ -1947,20 +2130,7 @@
         updateAudioUI(false);
         return;
       }
-
-      if (!useSynthFallback) {
-        try {
-          await audioEl.play();
-          updateAudioUI(true);
-          return;
-        } catch (_) {
-          useSynthFallback = true;
-        }
-      }
-
-      isPlaying = true;
-      playFallbackChimeLoop();
-      updateAudioUI(true);
+      await startAudio(true);
     });
 
     btnMuteAudio.addEventListener("click", () => {
