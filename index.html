@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
   <style>
     :root {
       --bg-deep: #050b18;
@@ -63,7 +62,7 @@
       overflow: hidden;
     }
 
-    /* ==================== COVER SPLASH (100% AUTOPLAY UNLOCK) ==================== */
+    /* Cover splash */
     .cover-splash {
       position: fixed;
       inset: 0;
@@ -186,7 +185,7 @@
       text-decoration: underline;
     }
 
-    /* ==================== MAIN SHELL ==================== */
+    /* Main shell */
     .page-shell {
       width: 100%;
       max-width: 480px;
@@ -210,7 +209,7 @@
       z-index: 2;
     }
 
-    /* ==================== HERO & UIT STOLES ==================== */
+    /* Hero and UIT stoles */
     .hero {
       position: relative;
       padding: 20px 18px 34px;
@@ -592,7 +591,7 @@
       transform: none;
     }
 
-    /* ==================== SECTION HEADERS ==================== */
+    /* Section headers */
     .section-block {
       padding: 34px 18px;
       border-bottom: 1px solid var(--border-tech);
@@ -622,7 +621,7 @@
       font-size: 14px;
     }
 
-    /* ==================== INTERACTIVE UIT MAP ==================== */
+    /* Meeting point map */
     .map-card {
       background: #081226;
       border: 1px solid rgba(56, 189, 248, 0.3);
@@ -631,70 +630,66 @@
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
     }
 
-    .map-toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-    }
-
     .map-status {
+      margin-bottom: 10px;
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--uit-cyan);
-      display: flex;
-      align-items: center;
-      gap: 6px;
     }
 
     .map-viewport {
       position: relative;
-      width: 100%;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 1;
       border-radius: 14px;
       overflow: hidden;
       background: #0a1730;
       border: 1px solid rgba(56, 189, 248, 0.2);
-      cursor: pointer;
     }
 
-    .map-viewport svg {
+    .map-image,
+    .map-stars {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      display: block;
     }
 
-    .star-node {
+    .map-image {
+      object-fit: cover;
+    }
+
+    .map-star {
       cursor: pointer;
-      transition: transform 0.25s ease;
+    }
+
+    .map-star-shape {
       transform-box: fill-box;
       transform-origin: center;
+      transition: transform 0.25s ease;
     }
 
-    .star-node:hover {
+    .map-star:hover .map-star-shape {
       transform: scale(1.18);
     }
 
-    .star-pulse {
-      animation: starPulse 1.6s infinite;
+    .map-star-halo {
+      opacity: 0.5;
       transform-box: fill-box;
       transform-origin: center;
+    }
+
+    .map-star.is-active {
+      filter: url(#starGlow);
+    }
+
+    .map-star.is-active .map-star-halo {
+      opacity: 1;
+      animation: starPulse 1.6s infinite;
     }
 
     @keyframes starPulse {
       0%, 100% { transform: scale(1); opacity: 0.85; }
       50% { transform: scale(1.38); opacity: 0.25; }
-    }
-
-    .route-dash {
-      stroke-dasharray: 8 6;
-      animation: dashFlow 1.8s linear infinite;
-    }
-
-    @keyframes dashFlow {
-      to { stroke-dashoffset: -28; }
     }
 
     .map-steps {
@@ -735,19 +730,23 @@
       flex-shrink: 0;
     }
 
-    .step-btn.active {
+    .step-btn.is-active {
       background: rgba(37, 99, 235, 0.24);
       border-color: var(--uit-cyan);
       color: #ffffff;
       box-shadow: 0 0 14px rgba(56, 189, 248, 0.25);
     }
 
-    .step-btn.active .step-num {
+    .step-btn.is-active .step-num {
       background: var(--gold);
       color: #0f172a;
     }
 
-    /* ==================== ALBUM OF YOUTH (2 PHOTOS) ==================== */
+    .photo-emoji {
+      font-size: 26px;
+    }
+
+    /* Album of youth */
     .album-header {
       text-align: center;
       margin-bottom: 20px;
@@ -856,7 +855,7 @@
       text-overflow: ellipsis;
     }
 
-    /* ==================== GUESTBOOK ==================== */
+    /* Guestbook */
     .guestbook-script {
       font-family: var(--font-script);
       font-size: 46px;
@@ -977,7 +976,7 @@
       font-style: italic;
     }
 
-    /* ==================== FOOTER ==================== */
+    /* Footer */
     .thank-section {
       padding: 36px 22px 92px;
       text-align: center;
@@ -1022,7 +1021,7 @@
       color: var(--uit-cyan);
     }
 
-    /* ==================== FLOATING AUDIO PLAYER ==================== */
+    /* Floating audio player */
     .audio-dock {
       position: fixed;
       bottom: 16px;
@@ -1135,7 +1134,7 @@
       justify-content: center;
     }
 
-    /* ==================== LINK GENERATOR MODAL ==================== */
+    /* Link generator modal */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -1201,6 +1200,14 @@
       font-size: 11px;
       word-break: break-all;
       margin-top: 10px;
+    }
+
+    .field-hint {
+      margin-top: 6px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--text-muted);
+      word-break: break-all;
     }
 
     .modal-actions {
@@ -1329,14 +1336,12 @@
       font-weight: 700;
       text-align: center;
     }
-
-
   </style>
 </head>
 <body class="lock-scroll">
   <div class="toast" id="toast">Đã sao chép!</div>
 
-  <!-- ==================== COVER SPLASH (CHẠM MỞ THIỆP = AUTOPLAY 100%) ==================== -->
+  <!-- Cover splash -->
   <div class="cover-splash" id="coverSplash">
     <div class="cover-card">
       <div class="cover-logo" data-uit-logo-slot></div>
@@ -1353,7 +1358,7 @@
   </div>
 
   <main class="page-shell">
-    <!-- Subtle PCB Circuit Background Overlay -->
+    <!-- PCB background -->
     <svg class="pcb-bg" viewBox="0 0 480 1400" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
       <g stroke="#38bdf8" stroke-width="1.2" fill="none">
         <path d="M24 90 H75 L105 120 V260 L75 290 H24" />
@@ -1370,9 +1375,9 @@
       </g>
     </svg>
 
-    <!-- ==================== 1. HERO SECTION ==================== -->
+    <!-- Hero section -->
     <section class="hero">
-      <!-- LEFT UIT GRADUATION STOLE -->
+      <!-- Left graduation stole -->
       <aside class="stole stole-left" aria-hidden="true">
         <div class="stole-logo-wrap" data-uit-logo-slot></div>
         <div class="stole-uit-vertical">
@@ -1383,7 +1388,7 @@
         <div class="stole-uni-small">Trường Đại Học<br />Công Nghệ Thông Tin</div>
       </aside>
 
-      <!-- RIGHT UIT GRADUATION STOLE -->
+      <!-- Right graduation stole -->
       <aside class="stole stole-right" aria-hidden="true">
         <div class="stole-right-top">
           <span class="uit-big">UIT</span>
@@ -1398,7 +1403,7 @@
         </svg>
       </aside>
 
-      <!-- CENTER HEADER -->
+      <!-- Header -->
       <div class="hero-top-center">
         <div class="uni-badge">
           <div class="uni-logo-circle" data-uit-logo-slot></div>
@@ -1410,21 +1415,21 @@
         <div class="hero-serif-sub">Ceremony</div>
       </div>
 
-      <!-- INVITED GUEST -->
+      <!-- Invited guest -->
       <div class="invite-to-block">
         <div class="invite-label">Thân gửi</div>
         <div class="guest-name-display" id="guestNameText">Bạn thân mến</div>
         <div class="invite-label">Tới dự Lễ Tốt Nghiệp</div>
       </div>
 
-      <!-- LOWER HERO -->
+      <!-- Hero details -->
       <div class="hero-lower">
         <div class="graduate-name">Nguyễn Vũ Nam</div>
         <p class="hero-quote">
           Hy vọng trong bức tranh thanh xuân của tớ sẽ có sự góp mặt của cậu
         </p>
 
-        <!-- Electronics / Tech Icons Row -->
+        <!-- Tech icons -->
         <div class="electronics-strip" aria-label="Embedded & Tech Icons">
           <div class="elec-item emerald" title="ESP32-S3">
             <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -1464,7 +1469,7 @@
           </div>
         </div>
 
-        <!-- Date Block -->
+        <!-- Date -->
         <div class="date-box">
           <div class="date-month">NOVEMBER</div>
           <div class="date-row">
@@ -1490,7 +1495,7 @@
       </div>
     </section>
 
-    <!-- ==================== 2. MEETING POINT & INTERACTIVE MAP ==================== -->
+    <!-- Meeting point -->
     <section class="section-block" id="map-section">
       <h2 class="sec-heading">ĐIỂM HẸN</h2>
       <div class="meeting-highlight">
@@ -1498,13 +1503,11 @@
         <span>Sảnh Tòa A • Trường ĐH CNTT (UIT)</span>
       </div>
 
-      <div class="map-card">
-        <div class="map-toolbar">
-          <div class="map-status" id="mapStatusText">★ Chạm các điểm bên dưới để xem lộ trình tới Sảnh Tòa A</div>
-        </div>
-
-        <div class="map-viewport" id="mapViewport" title="Chạm các ngôi sao để xem lộ trình">
-          <svg id="uitMapSvg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <div class="map-card" id="mapCard">
+        <p class="map-status" id="mapStatus"></p>
+        <div class="map-viewport">
+          <img class="map-image" id="mapImage" alt="Bản đồ khuôn viên UIT" />
+          <svg class="map-stars" viewBox="0 0 400 400" aria-label="Các điểm trên bản đồ">
             <defs>
               <filter id="starGlow" x="-40%" y="-40%" width="180%" height="180%">
                 <feGaussianBlur stdDeviation="3.5" result="blur" />
@@ -1513,131 +1516,15 @@
                   <feMergeNode in="SourceGraphic" />
                 </feMerge>
               </filter>
-              <linearGradient id="roadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#38bdf8" />
-                <stop offset="100%" stop-color="#a855f7" />
-              </linearGradient>
             </defs>
-
-            <!-- Custom map.jpg background layer -->
-            <image id="customMapImg" href="" x="0" y="0" width="400" height="400" preserveAspectRatio="xMidYMid slice" style="display:none; opacity:0.92;" />
-
-            <!-- Fallback Vector Map -->
-            <g id="vectorMapLayer">
-              <rect width="400" height="400" fill="#081329" />
-              <g stroke="rgba(56,189,248,0.08)" stroke-width="1">
-                <path d="M0 80 H400 M0 160 H400 M0 240 H400 M0 320 H400" />
-                <path d="M80 0 V400 M160 0 V400 M240 0 V400 M320 0 V400" />
-              </g>
-
-              <path d="M125 65 C85 85 80 185 110 235 L48 335 L48 380 L345 380 L345 148 L225 60 Z" fill="rgba(16,185,129,0.14)" stroke="rgba(16,185,129,0.3)" stroke-width="1.2" />
-
-              <g stroke="#1e3a5f" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                <path d="M266 396 V295 L235 255 L268 220" />
-                <path d="M266 346 H46 L160 226 V185" />
-                <path d="M266 310 L338 242 V195 L205 90 L165 110" />
-                <path d="M158 346 V292" />
-                <path d="M175 100 L220 42" />
-              </g>
-
-              <path d="M56 38 L82 40 L94 74 L74 88 L52 72 Z" fill="rgba(244,114,182,0.28)" stroke="#f472b6" stroke-width="1.5" />
-              <text x="58" y="106" fill="#fbcfe8" font-size="10.5" font-weight="700" text-anchor="middle">Căn tin / PVSV</text>
-
-              <rect x="208" y="28" width="16" height="9" rx="2" fill="#94a3b8" />
-              <text x="184" y="24" fill="#cbd5e1" font-size="10" font-weight="700">Cổng 2</text>
-              <rect x="242" y="30" width="32" height="20" rx="3" fill="rgba(168,85,247,0.3)" stroke="#c084fc" stroke-width="1.5" />
-              <text x="258" y="44" fill="#f3e8ff" font-size="10" font-weight="700" text-anchor="middle">Tòa D</text>
-
-              <path d="M226 56 Q268 62 302 88 Q290 108 264 120 Q232 100 220 76 Z" fill="rgba(132,204,22,0.2)" stroke="#a3e635" stroke-width="1.5" />
-              <text x="262" y="88" fill="#d9f99d" font-size="9.5" font-weight="700" text-anchor="middle">Sân thể thao</text>
-
-              <path d="M116 90 A64 64 0 0 0 182 184 L166 158 A36 36 0 0 1 134 114 Z" fill="rgba(56,189,248,0.28)" stroke="#38bdf8" stroke-width="1.8" />
-              <text x="128" y="166" fill="#e0f2fe" font-size="11.5" font-weight="800" text-anchor="middle">Tòa B</text>
-
-              <polygon points="212,96 312,196 292,216 192,116" fill="rgba(250,204,21,0.25)" stroke="#facc15" stroke-width="1.8" />
-              <text x="252" y="162" fill="#fef08a" font-size="11.5" font-weight="800" text-anchor="middle">Tòa C</text>
-
-              <polygon points="262,215 304,256 286,272 246,232" fill="rgba(52,211,153,0.26)" stroke="#34d399" stroke-width="1.8" />
-              <text x="275" y="248" fill="#a7f3d0" font-size="10.5" font-weight="800" text-anchor="middle">Tòa E</text>
-
-              <path d="M180 226 L216 226 L232 254 L232 280 L204 298 L164 298 L142 318 L120 302 L120 278 L156 254 Z" fill="rgba(249,115,22,0.34)" stroke="#fb923c" stroke-width="2.2" />
-              <text x="180" y="266" fill="#ffedd5" font-size="12.5" font-weight="800" text-anchor="middle">Tòa A</text>
-              <text x="180" y="280" fill="#fde047" font-size="8.8" font-weight="700" text-anchor="middle">SẢNH ĐIỂM HẸN</text>
-
-              <rect x="44" y="362" width="106" height="16" rx="3" fill="rgba(59,130,246,0.35)" stroke="#60a5fa" stroke-width="1.8" />
-              <text x="97" y="392" fill="#bfdbfe" font-size="10.5" font-weight="700" text-anchor="middle">Bãi đỗ xe</text>
-
-              <rect x="252" y="370" width="26" height="10" rx="2" fill="#fb923c" />
-              <text x="292" y="388" fill="#fed7aa" font-size="11" font-weight="800">Cổng A</text>
-            </g>
-
-            <!-- ANIMATED ROUTE PATH -->
-            <path id="navRoutePath"
-              d="M 315 372 L 266 372 L 266 346 L 154 346 L 48 346 L 138 258 L 178 272 L 156 218 L 118 176"
-              fill="none"
-              stroke="url(#roadGrad)"
-              stroke-width="3.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="route-dash" />
-
-            <g id="sparkleTrail"></g>
-
-            <!-- 4 Interactive Waypoint Stars -->
-            <g class="star-node" data-step="0" transform="translate(315, 372)">
-              <circle r="16" fill="rgba(239,68,68,0.22)" class="star-pulse" />
-              <polygon points="0,-13 3.8,-4.5 13,-4 5.8,2.2 8.2,11.5 0,6.5 -8.2,11.5 -5.8,2.2 -13,-4 -3.8,-4.5" fill="#ef4444" stroke="#ffffff" stroke-width="1.2" />
-              <text y="4" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">1</text>
-            </g>
-
-            <g class="star-node" data-step="1" transform="translate(154, 368)">
-              <circle r="15" fill="rgba(56,189,248,0.22)" />
-              <polygon points="0,-13 3.8,-4.5 13,-4 5.8,2.2 8.2,11.5 0,6.5 -8.2,11.5 -5.8,2.2 -13,-4 -3.8,-4.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.2" />
-              <text y="4" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">2</text>
-            </g>
-
-            <g class="star-node" data-step="2" transform="translate(178, 272)">
-              <circle r="19" fill="rgba(250,204,21,0.26)" class="star-pulse" />
-              <polygon points="0,-15 4.4,-5.2 15,-4.6 6.8,2.6 9.5,13 0,7.5 -9.5,13 -6.8,2.6 -15,-4.6 -4.4,-5.2" fill="#facc15" stroke="#0f172a" stroke-width="1.2" filter="url(#starGlow)" />
-              <text y="4.5" fill="#0f172a" font-size="11" font-weight="900" text-anchor="middle">3</text>
-            </g>
-
-            <g class="star-node" data-step="3" transform="translate(118, 176)">
-              <circle r="15" fill="rgba(16,185,129,0.24)" />
-              <polygon points="0,-13 3.8,-4.5 13,-4 5.8,2.2 8.2,11.5 0,6.5 -8.2,11.5 -5.8,2.2 -13,-4 -3.8,-4.5" fill="#10b981" stroke="#ffffff" stroke-width="1.2" />
-              <text y="4" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">4</text>
-            </g>
-
-            <!-- MOVING GLOWING STAR MARKER -->
-            <g id="movingStar" transform="translate(315, 372)" filter="url(#starGlow)">
-              <circle r="12" fill="rgba(250,204,21,0.35)" />
-              <polygon points="0,-11 3.2,-3.8 11,-3.3 4.8,1.8 6.8,9.5 0,5.2 -6.8,9.5 -4.8,1.8 -11,-3.3 -3.2,-3.8" fill="#fef08a" stroke="#ffffff" stroke-width="1" />
-            </g>
+            <g id="mapStars"></g>
           </svg>
         </div>
-
-        <div class="map-steps">
-          <button type="button" class="step-btn active" data-step-btn="0">
-            <span class="step-num">1</span>
-            <span>Cổng Chính (Cổng A)</span>
-          </button>
-          <button type="button" class="step-btn" data-step-btn="1">
-            <span class="step-num">2</span>
-            <span>Bãi Gửi Xe UIT</span>
-          </button>
-          <button type="button" class="step-btn" data-step-btn="2">
-            <span class="step-num">3</span>
-            <span>Điểm Hẹn: Sảnh Tòa A</span>
-          </button>
-          <button type="button" class="step-btn" data-step-btn="3">
-            <span class="step-num">4</span>
-            <span>Chụp Choẹt</span>
-          </button>
-        </div>
+        <div class="map-steps" id="mapSteps"></div>
       </div>
     </section>
 
-    <!-- ==================== 3. ALBUM OF YOUTH (2 PHOTOS) ==================== -->
+    <!-- Album of youth -->
     <section class="section-block" id="album-section">
       <div class="album-header">
         <div class="album-top">
@@ -1653,7 +1540,7 @@
           <div class="photo-frame" id="myPhotoFrame">
             <img id="myPhotoImg" alt="Ảnh tốt nghiệp Nguyễn Vũ Nam" />
             <div class="photo-fallback">
-              <span style="font-size:26px;">👨‍🎓</span>
+              <span class="photo-emoji">👨‍🎓</span>
               <span>Đặt ảnh vào<br /><strong>assets/nam.jpg</strong></span>
             </div>
           </div>
@@ -1666,8 +1553,8 @@
           <div class="photo-frame" id="guestPhotoFrame">
             <img id="guestPhotoImg" alt="Ảnh khách mời" />
             <div class="photo-fallback">
-              <span style="font-size:26px;">✨</span>
-              <span>Truyền <strong>?img=khach1.jpg</strong><br />hoặc thêm <strong>assets/guest-default.jpg</strong></span>
+              <span class="photo-emoji">✨</span>
+              <span>Ảnh đang được cập nhật</span>
             </div>
           </div>
           <div class="photo-meta">
@@ -1677,7 +1564,7 @@
       </div>
     </section>
 
-    <!-- ==================== 4. GUESTBOOK (SỔ LƯU BÚT) ==================== -->
+    <!-- Guestbook -->
     <section class="section-block" id="guestbook-section">
       <h2 class="guestbook-script">Sổ lưu bút</h2>
       <p class="guestbook-sub">
@@ -1694,17 +1581,17 @@
       <div class="wish-list" id="wishList"></div>
     </section>
 
-    <!-- ==================== 5. THANK YOU FOOTER ==================== -->
+    <!-- Thank you footer -->
     <footer class="thank-section">
       <div class="thank-script">Thank you</div>
       <p class="thank-text">
         Cảm ơn mọi người đã đến với mình buổi lễ tốt nghiệp này. Hy vọng với sự có mặt của mọi người ngày hôm nay sẽ là động lực tiếp bước cho mình trên con đường mới.
       </p>
-      <button type="button" class="admin-trigger" id="openAdminBtn">⚙ Tạo link mời nhanh</button>
+      <button type="button" class="admin-trigger" id="openAdminBtn" hidden>⚙ Tạo link mời nhanh</button>
     </footer>
   </main>
 
-  <!-- ==================== FLOATING AUDIO DOCK ==================== -->
+  <!-- Floating audio dock -->
   <div class="audio-dock" id="audioDock">
     <div class="audio-left">
       <button type="button" class="btn-play" id="btnPlayAudio" aria-label="Phát hoặc tạm dừng nhạc">▶</button>
@@ -1722,7 +1609,7 @@
     <audio id="bgAudio" loop preload="auto" playsinline></audio>
   </div>
 
-  <!-- ==================== QUICK INVITE LINK MODAL ==================== -->
+  <!-- Quick invite link modal -->
   <div class="modal-backdrop" id="adminModal" role="dialog" aria-modal="true" aria-label="Tạo link mời nhanh">
     <div class="modal-box">
       <div class="modal-head">
@@ -1732,37 +1619,36 @@
       <label class="field-label" for="genGuestName">Tên khách mời (?to=...)</label>
       <input class="wish-input" id="genGuestName" type="text" placeholder="Ví dụ: Đức Phong" />
 
-      <label class="field-label" for="genGuestImg">Tên file ảnh trong assets/ hoặc URL (?img=...)</label>
-      <input class="wish-input" id="genGuestImg" type="text" placeholder="Ví dụ: khach1.jpg" />
+      <label class="field-label" for="genGuestKey">Mã ảnh khách mời (?g=...)</label>
+      <input class="wish-input" id="genGuestKey" type="text" placeholder="Mã ngẫu nhiên, a-z 0-9" />
+      <div class="field-hint" id="photoPathHint"></div>
 
       <div class="generated-url" id="generatedUrlBox"></div>
 
       <div class="modal-actions">
         <button type="button" class="btn-copy" id="btnCopyInvite">Sao chép link</button>
+        <button type="button" class="btn-open" id="btnNewKey">Mã mới</button>
         <button type="button" class="btn-open" id="btnPreviewInvite">Mở thử ngay</button>
       </div>
     </div>
   </div>
-  <!-- ==================== ALBUM LIGHTBOX MODAL ==================== -->
+  <!-- Album lightbox modal -->
   <div class="lightbox-backdrop" id="photoLightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh phóng to">
     <button type="button" class="lightbox-close" id="closeLightboxBtn" aria-label="Đóng">&times;</button>
     <img class="lightbox-img" id="lightboxImg" src="" alt="Xem ảnh phóng to" />
     <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
-
   <script>
-    /* =====================================================================
-       CẤU HÌNH CỐ ĐỊNH ("UPLOAD ONE FOR ALL")
-       ===================================================================== */
+    /* Cấu hình chung */
     const CONFIG = {
       hostName: "Nguyễn Vũ Nam",
       defaultGuestName: "Bạn thân mến",
       logoUrl: "./assets/logo-uit.png",
       myPhotoUrl: "./assets/nam.jpg",
       defaultGuestPhotoUrl: "./assets/guest-default.jpg",
-      guestAssetsPrefix: "./assets/",
+      // Ảnh khách mời nằm ở guestPhotoDir/<mã>.jpg, mã lấy từ link (?g=<mã>) và phải là chuỗi ngẫu nhiên khó đoán.
+      guestPhotoDir: "./assets/guests/",
       mapImageUrl: "./assets/map.jpg",
-      useCustomMapImage: true,
       audioUrl: "./assets/music.mp3",
       audioTitle: "Graduation Theme • UIT 2026",
       defaultVolume: 0.55,
@@ -1785,12 +1671,16 @@
       </svg>
     `;
 
+    const $ = (id) => document.getElementById(id);
+
+    let toastTimer = null;
+
     function showToast(msg) {
-      const el = document.getElementById("toast");
+      const el = $("toast");
       el.textContent = msg;
       el.classList.add("show");
-      clearTimeout(window.__toastTimer);
-      window.__toastTimer = setTimeout(() => el.classList.remove("show"), 2400);
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.remove("show"), 2400);
     }
 
     function escapeHtml(str) {
@@ -1802,23 +1692,22 @@
         .replace(/'/g, "&#39;");
     }
 
-    /* ==================== 1. LOAD FIXED LOGO, PHOTOS & URL PARAMS ==================== */
+    /* Guest, logo and photos */
     const params = new URLSearchParams(window.location.search);
-    const guestName = (params.get("to") || "").trim() || CONFIG.defaultGuestName;
-    const rawGuestImg = (params.get("img") || "").trim();
+    const isAdmin = params.get("admin") === "1";
+    const GUEST_KEY_PATTERN = /^[a-z0-9]{8,32}$/;
+    const guestKey = (params.get("g") || "").trim().toLowerCase();
+    const guestName = (params.get("to") || "").trim().slice(0, 60) || CONFIG.defaultGuestName;
+    const guestPhotoUrl = GUEST_KEY_PATTERN.test(guestKey)
+      ? `${CONFIG.guestPhotoDir}${guestKey}.jpg`
+      : CONFIG.defaultGuestPhotoUrl;
 
-    function resolveGuestImage(val) {
-      if (!val) return CONFIG.defaultGuestPhotoUrl;
-      if (/^(https?:\/\/|\/|\.\/|\.\.\/|data:)/i.test(val)) return val;
-      return CONFIG.guestAssetsPrefix + val;
-    }
-
-    document.getElementById("coverGuestName").textContent = guestName;
-    document.getElementById("guestNameText").textContent = guestName;
-    document.getElementById("guestPhotoCaption").textContent = guestName;
-    document.getElementById("googleMapsBtn").href = CONFIG.googleMapsUrl;
-    if (params.get("to")) {
-      document.getElementById("wishName").value = guestName;
+    $("coverGuestName").textContent = guestName;
+    $("guestNameText").textContent = guestName;
+    $("guestPhotoCaption").textContent = guestName;
+    $("googleMapsBtn").href = CONFIG.googleMapsUrl;
+    if (params.has("to")) {
+      $("wishName").value = guestName;
     }
 
     document.querySelectorAll("[data-uit-logo-slot]").forEach((slot) => {
@@ -1833,8 +1722,8 @@
     });
 
     function bindPhoto(imgId, frameId, url) {
-      const img = document.getElementById(imgId);
-      const frame = document.getElementById(frameId);
+      const img = $(imgId);
+      const frame = $(frameId);
       if (!url) {
         frame.classList.add("is-empty");
         return;
@@ -1848,115 +1737,58 @@
     }
 
     bindPhoto("myPhotoImg", "myPhotoFrame", CONFIG.myPhotoUrl);
-    bindPhoto("guestPhotoImg", "guestPhotoFrame", resolveGuestImage(rawGuestImg));
+    bindPhoto("guestPhotoImg", "guestPhotoFrame", guestPhotoUrl);
 
-    if (CONFIG.useCustomMapImage && CONFIG.mapImageUrl) {
-      const mapImgEl = document.getElementById("customMapImg");
-      const vectorLayer = document.getElementById("vectorMapLayer");
-      const probe = new Image();
-      probe.onload = () => {
-        mapImgEl.setAttribute("href", CONFIG.mapImageUrl);
-        mapImgEl.style.display = "block";
-        vectorLayer.style.display = "none";
-      };
-      probe.src = CONFIG.mapImageUrl;
-    }
-
-    /* ==================== 2. INTERACTIVE MAP STAR ANIMATION ==================== */
-    const routePath = document.getElementById("navRoutePath");
-    const movingStar = document.getElementById("movingStar");
-    const sparkleTrail = document.getElementById("sparkleTrail");
-    const mapStatusText = document.getElementById("mapStatusText");
-    const stepButtons = document.querySelectorAll("[data-step-btn]");
-
-    const WAYPOINTS = [
-      { ratio: 0.0,  label: "★1 Cổng Chính (Cổng A) — Điểm xuất phát" },
-      { ratio: 0.34, label: "★2 Bãi đỗ xe UIT — Rẽ trái từ Cổng A" },
-      { ratio: 0.78, label: "★3 Sảnh Tòa A — Điểm hẹn gặp mặt chính!" },
-      { ratio: 1.0,  label: "★4 Tòa B & Khuôn viên — Check-in chụp ảnh" }
+    /* Meeting point map */
+    const STAR_POINTS = "0,-13 3.8,-4.5 13,-4 5.8,2.2 8.2,11.5 0,6.5 -8.2,11.5 -5.8,2.2 -13,-4 -3.8,-4.5";
+    const DEFAULT_MAP_STEP = 2;
+    const MAP_STEPS = [
+      { x: 315, y: 372, color: "#ef4444", halo: "rgba(239, 68, 68, 0.22)", label: "Cổng Chính (Cổng A)", hint: "Cổng Chính (Cổng A) — Điểm xuất phát" },
+      { x: 154, y: 368, color: "#2563eb", halo: "rgba(56, 189, 248, 0.22)", label: "Bãi Gửi Xe UIT", hint: "Bãi đỗ xe UIT — Rẽ trái từ Cổng A" },
+      { x: 178, y: 272, color: "#facc15", halo: "rgba(250, 204, 21, 0.26)", label: "Điểm Hẹn: Sảnh Tòa A", hint: "Sảnh Tòa A — Điểm hẹn gặp mặt chính!", main: true },
+      { x: 295.8, y: 274.9, color: "#10b981", halo: "rgba(16, 185, 129, 0.24)", label: "Chụp Choẹt", hint: "Tòa B & Khuôn viên — Check-in chụp ảnh" }
     ];
 
-    let currentRatio = 0;
-    let animFrameId = null;
+    const mapImage = $("mapImage");
+    mapImage.addEventListener("error", () => { mapImage.hidden = true; });
+    mapImage.src = CONFIG.mapImageUrl;
 
-    function setActiveStepUI(stepIdx) {
-      stepButtons.forEach((btn, idx) => btn.classList.toggle("active", idx === stepIdx));
-      mapStatusText.textContent = WAYPOINTS[stepIdx].label;
+    $("mapStars").innerHTML = MAP_STEPS.map((step, i) => `
+      <g class="map-star" data-step="${i}" transform="translate(${step.x}, ${step.y})">
+        <g class="map-star-shape">
+          <circle class="map-star-halo" r="${step.main ? 19 : 15}" fill="${step.halo}" />
+          <polygon points="${STAR_POINTS}" fill="${step.color}" stroke="${step.main ? "#0f172a" : "#ffffff"}" stroke-width="1.2" />
+          <text y="4" fill="${step.main ? "#0f172a" : "#ffffff"}" font-size="10" font-weight="800" text-anchor="middle">${i + 1}</text>
+        </g>
+      </g>`).join("");
+
+    $("mapSteps").innerHTML = MAP_STEPS.map((step, i) => `
+      <button type="button" class="step-btn" data-step="${i}">
+        <span class="step-num">${i + 1}</span>
+        <span>${step.label}</span>
+      </button>`).join("");
+
+    const mapStarEls = document.querySelectorAll(".map-star");
+    const mapButtonEls = document.querySelectorAll(".step-btn");
+
+    function selectMapStep(index) {
+      mapStarEls.forEach((el, i) => el.classList.toggle("is-active", i === index));
+      mapButtonEls.forEach((el, i) => el.classList.toggle("is-active", i === index));
+      $("mapStatus").textContent = `★${index + 1} ${MAP_STEPS[index].hint}`;
     }
 
-    function spawnSparkle(x, y) {
-      const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-      dot.setAttribute("cx", x);
-      dot.setAttribute("cy", y);
-      dot.setAttribute("r", (Math.random() * 2.2 + 1.4).toFixed(1));
-      dot.setAttribute("fill", Math.random() > 0.4 ? "#fde047" : "#38bdf8");
-      dot.setAttribute("opacity", "0.95");
-      sparkleTrail.appendChild(dot);
-
-      let op = 0.95;
-      const fade = () => {
-        op -= 0.045;
-        if (op <= 0) {
-          dot.remove();
-        } else {
-          dot.setAttribute("opacity", op.toFixed(2));
-          requestAnimationFrame(fade);
-        }
-      };
-      requestAnimationFrame(fade);
-    }
-
-    function animateStarTo(targetRatio, durationMs = 1100, onDone = null) {
-      cancelAnimationFrame(animFrameId);
-      const totalLen = routePath.getTotalLength();
-      const startRatio = currentRatio;
-      const startTime = performance.now();
-      let tick = 0;
-
-      function frame(now) {
-        const elapsed = now - startTime;
-        const t = Math.min(elapsed / durationMs, 1);
-        const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-        currentRatio = startRatio + (targetRatio - startRatio) * eased;
-
-        const pt = routePath.getPointAtLength(currentRatio * totalLen);
-        const rot = (currentRatio * 720).toFixed(1);
-        movingStar.setAttribute("transform", `translate(${pt.x.toFixed(1)}, ${pt.y.toFixed(1)}) rotate(${rot})`);
-
-        if (tick++ % 3 === 0) spawnSparkle(pt.x, pt.y);
-
-        if (t < 1) {
-          animFrameId = requestAnimationFrame(frame);
-        } else if (onDone) {
-          onDone();
-        }
-      }
-      animFrameId = requestAnimationFrame(frame);
-    }
-
-    stepButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const idx = Number(btn.dataset.stepBtn);
-        setActiveStepUI(idx);
-        animateStarTo(WAYPOINTS[idx].ratio, 900);
-      });
+    $("mapCard").addEventListener("click", (e) => {
+      const target = e.target.closest("[data-step]");
+      if (target) selectMapStep(Number(target.dataset.step));
     });
 
-    document.querySelectorAll(".star-node").forEach((node) => {
-      node.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const idx = Number(node.dataset.step);
-        setActiveStepUI(idx);
-        animateStarTo(WAYPOINTS[idx].ratio, 900);
-      });
-    });
+    selectMapStep(DEFAULT_MAP_STEP);
 
-    /* ==================== 3. GUESTBOOK (GOOGLE SHEETS + LOCAL FALLBACK) ==================== */
-    const DEFAULT_WISHES = [];
-    const wishListEl = document.getElementById("wishList");
-    const wishSyncNote = document.getElementById("wishSyncNote");
-    const btnSubmitWish = document.getElementById("btnSubmitWish");
-    let wishesData = [...DEFAULT_WISHES];
+    /* Guestbook (Google Sheets, localStorage fallback) */
+    const wishListEl = $("wishList");
+    const wishSyncNote = $("wishSyncNote");
+    const btnSubmitWish = $("btnSubmitWish");
+    let wishesData = [];
 
     function renderWishes(list) {
       if (!list || list.length === 0) {
@@ -1982,7 +1814,7 @@
         const saved = JSON.parse(localStorage.getItem(CONFIG.storageKey));
         if (Array.isArray(saved) && saved.length > 0) return saved;
       } catch (_) {}
-      return [...DEFAULT_WISHES];
+      return [];
     }
 
     async function initWishes() {
@@ -1998,7 +1830,7 @@
         const res = await fetch(api, { method: "GET" });
         const json = await res.json();
         const cloudWishes = Array.isArray(json.data) ? json.data : [];
-        wishesData = [...cloudWishes, ...DEFAULT_WISHES];
+        wishesData = cloudWishes;
         renderWishes(wishesData);
         wishSyncNote.textContent = wishesData.length > 0 ? `${wishesData.length} lời chúc` : "";
       } catch (_) {
@@ -2010,10 +1842,10 @@
 
     initWishes();
 
-    document.getElementById("wishForm").addEventListener("submit", async (e) => {
+    $("wishForm").addEventListener("submit", async (e) => {
       e.preventDefault();
-      const nameEl = document.getElementById("wishName");
-      const textEl = document.getElementById("wishText");
+      const nameEl = $("wishName");
+      const textEl = $("wishText");
       const nameVal = nameEl.value.trim();
       const textVal = textEl.value.trim();
       if (!nameVal || !textVal) return;
@@ -2057,17 +1889,19 @@
       btnSubmitWish.textContent = "Gửi lời chúc";
     });
 
-    /* ==================== 4. AUDIO AUTOPLAY (COVER SPLASH + FIRST TOUCH) ==================== */
-    const audioEl = document.getElementById("bgAudio");
-    const audioDock = document.getElementById("audioDock");
-    const btnPlayAudio = document.getElementById("btnPlayAudio");
-    const btnMuteAudio = document.getElementById("btnMuteAudio");
-    const audioStatusText = document.getElementById("audioStatusText");
-    const coverSplash = document.getElementById("coverSplash");
-    document.getElementById("audioTitleText").textContent = CONFIG.audioTitle;
+    /* Background music */
+    const audioEl = $("bgAudio");
+    const audioDock = $("audioDock");
+    const btnPlayAudio = $("btnPlayAudio");
+    const btnMuteAudio = $("btnMuteAudio");
+    const audioStatusText = $("audioStatusText");
+    const coverSplash = $("coverSplash");
+    $("audioTitleText").textContent = CONFIG.audioTitle;
 
     audioEl.src = CONFIG.audioUrl;
     audioEl.volume = CONFIG.defaultVolume;
+
+    const UNLOCK_EVENTS = ["pointerdown", "touchstart", "click"];
 
     let isPlaying = false;
     let useSynthFallback = false;
@@ -2157,38 +1991,26 @@
       }
       coverSplash.classList.add("hidden");
       document.body.classList.remove("lock-scroll");
-      setTimeout(() => {
-        setActiveStepUI(2);
-        animateStarTo(WAYPOINTS[2].ratio, 1500);
-      }, 650);
     }
 
-    document.getElementById("btnOpenWithMusic").addEventListener("click", () => dismissCover(true));
-    document.getElementById("btnOpenSilent").addEventListener("click", () => dismissCover(false));
+    $("btnOpenWithMusic").addEventListener("click", () => dismissCover(true));
+    $("btnOpenSilent").addEventListener("click", () => dismissCover(false));
 
-    if (!CONFIG.enableCoverSplash || params.get("admin") === "1") {
+    if (!CONFIG.enableCoverSplash || isAdmin) {
       coverSplash.classList.add("hidden");
       document.body.classList.remove("lock-scroll");
 
       const unlockOnce = async (e) => {
         if (e.target && e.target.closest("#audioDock")) return;
         if (await startAudio(true)) {
-          ["pointerdown", "touchstart", "click"].forEach((ev) =>
-            document.removeEventListener(ev, unlockOnce, true)
-          );
+          UNLOCK_EVENTS.forEach((ev) => document.removeEventListener(ev, unlockOnce, true));
         }
       };
 
       window.addEventListener("load", async () => {
         if (!(await startAudio(false))) {
-          ["pointerdown", "touchstart", "click"].forEach((ev) =>
-            document.addEventListener(ev, unlockOnce, true)
-          );
+          UNLOCK_EVENTS.forEach((ev) => document.addEventListener(ev, unlockOnce, true));
         }
-        setTimeout(() => {
-          setActiveStepUI(2);
-          animateStarTo(WAYPOINTS[2].ratio, 1500);
-        }, 700);
       });
     }
 
@@ -2207,40 +2029,54 @@
       btnMuteAudio.textContent = audioEl.muted ? "🔇" : "🔊";
     });
 
-    /* ==================== 5. QUICK INVITE LINK GENERATOR (?admin=1) ==================== */
-    const adminModal = document.getElementById("adminModal");
-    const genGuestName = document.getElementById("genGuestName");
-    const genGuestImg = document.getElementById("genGuestImg");
-    const generatedUrlBox = document.getElementById("generatedUrlBox");
+    /* Invite link generator (?admin=1) */
+    const adminModal = $("adminModal");
+    const genGuestName = $("genGuestName");
+    const genGuestKey = $("genGuestKey");
+    const generatedUrlBox = $("generatedUrlBox");
+    const photoPathHint = $("photoPathHint");
+
+    function randomGuestKey(length = 12) {
+      const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+      const bytes = crypto.getRandomValues(new Uint8Array(length));
+      return Array.from(bytes, (b) => chars[b % chars.length]).join("");
+    }
 
     function buildInviteUrl() {
       const base = window.location.origin + window.location.pathname;
+      const key = genGuestKey.value.trim().toLowerCase();
+      const name = genGuestName.value.trim();
       const q = new URLSearchParams();
-      if (genGuestName.value.trim()) q.set("to", genGuestName.value.trim());
-      if (genGuestImg.value.trim()) q.set("img", genGuestImg.value.trim());
+      if (name) q.set("to", name);
+      if (key) q.set("g", key);
       const queryStr = q.toString();
       const fullUrl = queryStr ? `${base}?${queryStr}` : base;
+
       generatedUrlBox.textContent = fullUrl;
+      if (!key) photoPathHint.textContent = "";
+      else if (!GUEST_KEY_PATTERN.test(key)) photoPathHint.textContent = "Mã chỉ gồm a-z, 0-9, dài 8–32 ký tự";
+      else photoPathHint.textContent = `Đặt ảnh tại: ${CONFIG.guestPhotoDir.replace("./", "")}${key}.jpg`;
       return fullUrl;
     }
 
     function openAdminModal() {
       genGuestName.value = params.get("to") || "";
-      genGuestImg.value = params.get("img") || "";
+      genGuestKey.value = params.get("g") || randomGuestKey();
       buildInviteUrl();
       adminModal.classList.add("open");
     }
 
-    document.getElementById("openAdminBtn").addEventListener("click", openAdminModal);
-    document.getElementById("closeAdminBtn").addEventListener("click", () => adminModal.classList.remove("open"));
+    $("openAdminBtn").hidden = !isAdmin;
+    $("openAdminBtn").addEventListener("click", openAdminModal);
+    $("closeAdminBtn").addEventListener("click", () => adminModal.classList.remove("open"));
     adminModal.addEventListener("click", (e) => {
       if (e.target === adminModal) adminModal.classList.remove("open");
     });
 
     genGuestName.addEventListener("input", buildInviteUrl);
-    genGuestImg.addEventListener("input", buildInviteUrl);
+    genGuestKey.addEventListener("input", buildInviteUrl);
 
-    document.getElementById("btnCopyInvite").addEventListener("click", async () => {
+    $("btnCopyInvite").addEventListener("click", async () => {
       const url = buildInviteUrl();
       try {
         await navigator.clipboard.writeText(url);
@@ -2250,21 +2086,26 @@
       }
     });
 
-    document.getElementById("btnPreviewInvite").addEventListener("click", () => {
+    $("btnNewKey").addEventListener("click", () => {
+      genGuestKey.value = randomGuestKey();
+      buildInviteUrl();
+    });
+
+    $("btnPreviewInvite").addEventListener("click", () => {
       window.location.href = buildInviteUrl();
     });
 
-    if (params.get("admin") === "1") {
+    if (isAdmin) {
       openAdminModal();
     }
-    /* ==================== 6. ALBUM PHOTO LIGHTBOX ==================== */
-    const photoLightbox = document.getElementById("photoLightbox");
-    const lightboxImg = document.getElementById("lightboxImg");
-    const lightboxCaption = document.getElementById("lightboxCaption");
+    /* Photo lightbox */
+    const photoLightbox = $("photoLightbox");
+    const lightboxImg = $("lightboxImg");
+    const lightboxCaption = $("lightboxCaption");
 
     function openPhotoLightbox(frameId, imgId, captionText) {
-      const frame = document.getElementById(frameId);
-      const img = document.getElementById(imgId);
+      const frame = $(frameId);
+      const img = $(imgId);
       if (!frame || frame.classList.contains("is-empty") || !img.src) return;
 
       lightboxImg.src = img.src;
@@ -2276,15 +2117,15 @@
       photoLightbox.classList.remove("open");
     }
 
-    document.getElementById("myPhotoFrame").addEventListener("click", () => {
+    $("myPhotoFrame").addEventListener("click", () => {
       openPhotoLightbox("myPhotoFrame", "myPhotoImg", CONFIG.hostName);
     });
 
-    document.getElementById("guestPhotoFrame").addEventListener("click", () => {
-      openPhotoLightbox("guestPhotoFrame", "guestPhotoImg", document.getElementById("guestPhotoCaption").textContent);
+    $("guestPhotoFrame").addEventListener("click", () => {
+      openPhotoLightbox("guestPhotoFrame", "guestPhotoImg", $("guestPhotoCaption").textContent);
     });
 
-    document.getElementById("closeLightboxBtn").addEventListener("click", closePhotoLightbox);
+    $("closeLightboxBtn").addEventListener("click", closePhotoLightbox);
     photoLightbox.addEventListener("click", (e) => {
       if (e.target === photoLightbox) closePhotoLightbox();
     });
